@@ -7,7 +7,7 @@
     };
 
     dynamicBoost.enable = true;
-    modsetting.enable = true;
+    modesetting.enable = true;
       
     prime = {
       offload = {
@@ -19,7 +19,7 @@
     };
     
     nvidiaSettings = false;
-    nvidiaPersisted = true;
+    nvidiaPersistenced = true;
 
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     open = false;
