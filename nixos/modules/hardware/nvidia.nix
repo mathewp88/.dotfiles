@@ -24,4 +24,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     open = false;
   };
+  # Enable Nvidia Drivers
+  services.xserver.videoDrivers = ["nvidia"];
 }
