@@ -12,11 +12,11 @@
   ];
   
   # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "Mathai Mathew";
-    userEmail = "49433106+mathewp88@users.noreply.github.com";
-  };
+  #programs.git = {
+  #  enable = true;
+  #  userName = "Mathai Mathew";
+  #  userEmail = "49433106+mathewp88@users.noreply.github.com";
+  #};
 
   # Zsh Setup
   programs.zsh = {
