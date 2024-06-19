@@ -7,6 +7,12 @@
 
   imports = [ ./nvidia.nix ];
 
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "monthly";
+    fileSystems = [ "/" ];
+  };
+
   hardware = {
     # Enable all firmware regardless of license.
     enableAllFirmware = true;
