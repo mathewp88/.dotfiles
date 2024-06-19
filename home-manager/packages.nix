@@ -12,7 +12,6 @@
     p7zip
 
     # networking tools
-    cloudflare-warp
 
     # misc
     which
@@ -31,6 +30,7 @@
 
     # system tools
     bottom
+    nvtop
     sysstat
     lm_sensors # for `sensors` command
     ethtool
