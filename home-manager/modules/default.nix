@@ -2,5 +2,6 @@
 {
   imports = [
     ./shell/shell.nix
+    ./hypr/hyprland.nix
   ];
 }

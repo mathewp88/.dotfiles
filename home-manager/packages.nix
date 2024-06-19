@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     
     neofetch
+    ncdu
 
     # archives
     zip
