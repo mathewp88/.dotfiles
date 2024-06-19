@@ -12,7 +12,7 @@
 
     # Extra config options for systemd-logind.
     logind = {
-      powerKey = "suspend";
+      powerKey = "hibernate";
       lidSwitch = "suspend";
       lidSwitchExternalPower = "lock";
     };
