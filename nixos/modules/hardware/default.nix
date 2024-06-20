@@ -5,6 +5,8 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.resumeDevice = "/dev/nvme0n1p2";
+
   imports = [
     ./nvidia.nix
     ./pstate.nix
