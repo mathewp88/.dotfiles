@@ -3,6 +3,7 @@
 
   home.packages = with pkgs; [
     swww
+    swayosd
   ];
 
   wayland.windowManager.hyprland = {
@@ -15,6 +16,7 @@
 
       exec-once = [
         "swww-daemon"
+        "swayosd-server"
       ];
 
       exec = [
@@ -26,17 +28,7 @@
 
       bind = [
         "$mainMod, return, exec, $terminal"
-        "$mainMod, I, exec, $browser"
-
-        # Volume
-        ",0x1008FF11,exec,wpctl set-volume @DEFAULT_SINK@ 5%-"
-        ",0x1008FF13,exec,wpctl set-volume @DEFAULT_SINK@ 5%+"
-        ",0x1008FF12,exec,wpctl set-mute @DEFAULT_SINK@ toggle"
-        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
-
-        # Brightness
-        ",XF86MonBrightnessUp,exec,brightnessctl s +5%"
-        ",XF86MonBrightnessDown,exec,brightnessctl s 5%-"
+        "$mainMod, W, exec, $browser"
 
         # Windows
         "$mainMod, J, movefocus, d"
@@ -67,7 +59,21 @@
         )
           10)
       );
-       
+      
+      bindle = [
+        # Volume
+        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+        ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
+        ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 120"
+        ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower --max-volume 120"
+        ", XF86InputRaiseVolume, exec, swayosd-client --input-volume raise"
+        ", XF86InputLowerVolume, exec, swayosd-client --input-volume lower"
+
+        # Brightness
+        ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
+        ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+      ];
+
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
