@@ -1,7 +1,7 @@
 {config, ... }:
 {
   imports = [
-    ./deamon.nix
+    ./daemon.nix
     ./pipewire.nix
     ./gaming.nix
   ];
