@@ -19,6 +19,14 @@
     enable = true;
     xwayland.enable = true;
   };
+
+  #systemd.services.swww = {
+  #  wantedBy = [ "graphical-session.target" ];
+  #  description = "Starts the swww daemon to set wallpapers";
+  #  serviceConfig = {
+  #    ExecStart = ''${pkgs.swww}/bin/swww-daemon'';
+  #  };
+  #};
   
   #xdg.portal.enable = true;
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
