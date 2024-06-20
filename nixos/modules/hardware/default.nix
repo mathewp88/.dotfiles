@@ -4,8 +4,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  boot.resumeDevice = "/dev/nvme0n1p2";
+  boot.kernelParams = [ "resume=/dev/mapper/nixos-root" "resume_offset=533760" ];
+  boot.resumeDevice = "/dev/mapper/nixos-root";
 
   imports = [
     ./nvidia.nix

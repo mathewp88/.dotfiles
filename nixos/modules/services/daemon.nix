@@ -12,9 +12,9 @@
 
     # Extra config options for systemd-logind.
     logind = {
-      powerKey = "hibernate";
-      lidSwitch = "suspend";
-      lidSwitchExternalPower = "lock";
+      powerKey = "poweroff";
+      lidSwitch = "hibernate";
+      lidSwitchExternalPower = "suspend";
     };
 
     # Enable thermald, the temperature management daemon.
@@ -26,7 +26,7 @@
       percentageLow = 30;
       percentageCritical = 10;
       percentageAction = 5;
-      criticalPowerAction = "Hibernate";
+      criticalPowerAction = "HybridSleep";
     };
   };
 }
