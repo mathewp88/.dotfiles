@@ -4,7 +4,10 @@
   home.packages = with pkgs; [
     swww
     swayosd
+    playerctl
   ];
+
+  services.playerctld.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -13,6 +16,8 @@
       "$terminal" = "wezterm";
       "$browser" = "firefox";
       "$mainMod" = "SUPER";
+
+      input.numlock_by_default = true;
 
       exec-once = [
         "swww-daemon"
@@ -59,11 +64,18 @@
         )
           10)
       );
+
+      bindl = [
+        # Volume
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPrev, exec, playerctl previous"
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+        ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
+      ];
       
       bindle = [
         # Volume
-        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-        ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
         ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 120"
         ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower --max-volume 120"
         ", XF86InputRaiseVolume, exec, swayosd-client --input-volume raise"
