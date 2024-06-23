@@ -6,19 +6,21 @@
       bind = [
         "$mainMod, return, exec, $terminal"
         "$mainMod, W, exec, $browser"
-        "$mainMod, M, exec, $file_manager"
+        "$mainMod, F, exec, $file_manager"
         "$mainMod, Q, killactive"
-        "$mainMod, P, pseudo"
+        #"$mainMod, P, pseudo"
+
+        "$mainMod, P, exec, pgrep hyprlock || hyprlock"
 
         # Windows
         "$mainMod, J, movefocus, d"
         "$mainMod, K, movefocus, u"
         "$mainMod, H, movefocus, l"
         "$mainMod, L, movefocus, r"
-        "SUPER_SHIFT,J,movewindow,d"
-        "SUPER_SHIFT,K,movewindow,u"
-        "SUPER_SHIFT,H,movewindow,l"
-        "SUPER_SHIFT,L,movewindow,r"
+        "$mainMod SHIFT,J,movewindow,d"
+        "$mainMod SHIFT,K,movewindow,u"
+        "$mainMod SHIFT,H,movewindow,l"
+        "$mainMod SHIFT,L,movewindow,r"
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
         "$mainMod, mouse_down, workspace, e+1"
