@@ -71,7 +71,7 @@ case "$1" in
 	if [[ $status == "Playing" ]]; then
 		echo "󰎆"
 	elif [[ $status == "Paused" ]]; then
-		echo "󱑽"
+		echo "⏸"
 	else
 		echo ""
 	fi

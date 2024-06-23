@@ -48,6 +48,14 @@
 
   environment.variables.EDITOR = "nvim";
 
+  # Enable cron for async weather
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "*/2 * * * *    mathai    ${builtins.toString ./.}/modules/weather.sh"
+    ];
+  };
+
   programs.nh = {
     enable = true;
     clean.enable = true;

@@ -20,11 +20,10 @@ with config.lib.stylix.colors;
       general = [
         {
           no_fade_in = false;
-          grace = 1;
+          grace = 0;
           disable_loading_bar = false;
           hide_cursor = false;
           ignore_empty_input = true;
-          text_trim = true;
         }
       ];
 
@@ -43,14 +42,13 @@ with config.lib.stylix.colors;
           check_color = "rgb(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b})";
           fail_color = "rgb(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b})";
           fail_transition = 400;
-          font_family = "JetBrains Mono Nerd Font Mono";
+          #font_family = "JetBrains Mono Nerd Font Mono";
           placeholder_text = ''<span foreground="##cdd6f4">  $USER</span>'';
           fail_text = ''<span foreground="##cdd6f4">$FAIL</span>'';
           hide_input = false;
           position = "0, -470";
           halign = "center";
           valign = "center";
-          zindex = 10;
         }
       ];
 
@@ -58,9 +56,8 @@ with config.lib.stylix.colors;
         # Time HR
         {
           monitor = "";
-          text = ''cmd[update:1000] echo -e "$(date +"%H")"'';
+          text = ''cmd[update:100] echo -e "$(date +"%H")"'';
           color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
-          shadow_pass = 2;
           shadow_size = 3;
           shadow_color = "rgb(0,0,0)";
           shadow_boost = 1.2;
@@ -74,9 +71,8 @@ with config.lib.stylix.colors;
         # Time
         {
           monitor = "";
-          text = ''cmd[update:1000] echo -e "$(date +"%M")"'';
+          text = ''cmd[update:100] echo -e "$(date +"%M")"'';
           color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
-          shadow_pass = 2;
           shadow_size = 3;
           shadow_color = "rgb(0,0,0)";
           shadow_boost = 1.2;
@@ -90,9 +86,8 @@ with config.lib.stylix.colors;
         # Date
         {
           monitor = "";
-          text = ''cmd[update:1000] echo -e "$(date +"%d %b %A")"'';
+          text = ''cmd[update:100] echo -e "$(date +"%d %b %A")"'';
           color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
-          shadow_pass = 2;
           shadow_size = 3;
           shadow_color = "rgb(0,0,0)";
           shadow_boost = 1.2;
@@ -106,8 +101,7 @@ with config.lib.stylix.colors;
         # PLAYER TITTLE
         {
           monitor = "";
-          #    text = cmd[update:1000] echo "$(playerctl metadata --format "{{ xesam:title }}" 2>/dev/null | cut -c1-25)"
-          text = ''cmd[update:1000] echo "$(${builtins.toString ./.}/playerctlock.sh --title) $(${builtins.toString ./.}/playerctlock.sh --status)"'';
+          text = ''cmd[update:100] echo "$(${builtins.toString ./.}/playerctlock.sh --title) $(${builtins.toString ./.}/playerctlock.sh --status)"'';
           color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
           font_size = 16;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
@@ -119,8 +113,7 @@ with config.lib.stylix.colors;
         # PLAYER Length
         {
           monitor = "";
-          #    text= cmd[update:1000] echo "$(( $(playerctl metadata --format "{{ mpris:length }}" 2>/dev/null) / 60000000 ))m"
-          text = ''cmd[update:1000] echo "$(${builtins.toString ./.}/playerctlock.sh --length) "'';
+          text = ''cmd[update:100] echo "$(${builtins.toString ./.}/playerctlock.sh --length) "'';
           color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
           font_size = 11;
           font_family = "JetBrains Mono Nerd Font Mono";
@@ -132,8 +125,7 @@ with config.lib.stylix.colors;
         # PLAYER SOURCE
         {
           monitor = "";
-          #    text= cmd[update:1000] echo "$(playerctl metadata --format "{{ mpris:trackid }}" 2>/dev/null | grep -Eo "chromium|firefox|spotify")"
-          text = ''cmd[update:1000] echo "$(${builtins.toString ./.}/playerctlock.sh --source)"'';
+          text = ''cmd[update:100] echo "$(${builtins.toString ./.}/playerctlock.sh --source)"'';
           color = "rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.6)";
           font_size = 10;
           font_family = "JetBrains Mono Nerd Font Mono"; 
@@ -145,8 +137,7 @@ with config.lib.stylix.colors;
         # PLAYER ALBUM 
         {
           monitor = "";
-          #    text= cmd[update:1000] echo "$(~/.config/hypr/bin/album.sh)"
-          text = ''cmd[update:1000] echo "$(${builtins.toString ./.}/playerctlock.sh --album)"'';
+          text = ''cmd[update:100] echo "$(${builtins.toString ./.}/playerctlock.sh --album)"'';
           color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
           font_size = 10;
           font_family = "JetBrains Mono Nerd Font Mono";
@@ -158,8 +149,7 @@ with config.lib.stylix.colors;
         # PLAYER Artist
         {
           monitor = "";
-          #    text = cmd[update:1000] echo "$(playerctl metadata --format "{{ xesam:artist }}" 2>/dev/null | cut -c1-30)"
-          text = ''cmd[update:1000] echo "$(${builtins.toString ./.}/playerctlock.sh --artist)"'';
+          text = ''cmd[update:100] echo "$(${builtins.toString ./.}/playerctlock.sh --artist)"'';
           color = "rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.8)";
           font_size = 10;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
@@ -171,7 +161,7 @@ with config.lib.stylix.colors;
         # Weather
         {
           monitor = "";
-          text = ''cmd[update:60000] echo "$(${builtins.toString ./.}/weather.sh)"'';
+          text = ''cmd[update:1000] echo "$(${builtins.toString ./.}/weather.sh)"'';
           color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
           font_size = 10;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
@@ -183,7 +173,7 @@ with config.lib.stylix.colors;
         # Information
         {
           monitor = "";
-          text = ''cmd[update:1000] echo -e "$(${builtins.toString ./.}/infonlock.sh)"'';
+          text = ''cmd[update:10000] echo -e "$(${builtins.toString ./.}/infonlock.sh)"'';
           color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
           font_size = 12;
           font_family = "JetBrains Mono Nerd Font Mono ExtraBold";

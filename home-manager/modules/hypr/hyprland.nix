@@ -25,7 +25,7 @@
       "$terminal" = "wezterm";
       "$browser" = "firefox";
       "$file_manager" = "nemo";
-      "$mainMod" = "SUPER";
+      "$mainMod" = "ALT";
 
       input.numlock_by_default = true;
 
