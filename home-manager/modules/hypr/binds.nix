@@ -10,7 +10,7 @@
         "$mainMod, Q, killactive"
         #"$mainMod, P, pseudo"
 
-        "$mainMod, P, exec, pgrep hyprlock || hyprlock"
+        "$mainMod, P, exec, loginctl lock-session"
 
         # Windows
         "$mainMod, J, movefocus, d"
