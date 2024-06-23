@@ -4,6 +4,7 @@
   imports = [
     ./binds.nix
     ./lock.nix
+    ./idle.nix
   ];
 
   #programs.hyprlock.enable = true;
@@ -14,6 +15,7 @@
     playerctl
     bc
     jq
+    brightnessctl
   ];
 
   services.playerctld.enable = true;

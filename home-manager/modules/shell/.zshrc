@@ -1,3 +1,6 @@
+# Turn of bell
+unsetopt BEEP
+
 # Keybindings
 bindkey -e
 bindkey "${terminfo[kcuu1]}" history-search-backward
