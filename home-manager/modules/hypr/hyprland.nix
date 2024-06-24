@@ -32,6 +32,7 @@
       input.numlock_by_default = true;
 
       exec-once = [
+        "brightnessctl s $(cat ~/.config/lock/bright)"
         "swww-daemon"
         "swayosd-server"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
