@@ -5,6 +5,7 @@
     ./binds.nix
     ./lock.nix
     ./idle.nix
+    ./rofi/rofi.nix
   ];
 
   #programs.hyprlock.enable = true;
@@ -16,6 +17,8 @@
     bc
     jq
     brightnessctl
+    rofi-wayland
+    papirus-icon-theme
   ];
 
   services.playerctld.enable = true;

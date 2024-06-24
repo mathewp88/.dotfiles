@@ -15,6 +15,8 @@
     ./modules
   ];
 
+  stylix.enable = true;
+
   home.stateVersion = "24.05";
 
   # Let home Manager install and manage itself.
