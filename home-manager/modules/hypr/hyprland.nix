@@ -45,6 +45,11 @@
         "swww img ${config.stylix.image}"
       ];
 
+      input.kb_options = "caps:swapescape";
+      decoration.blur.enabled = false;
+      decoration.drop_shadow = false;
+
+      misc.vfr = true;
       misc.disable_hyprland_logo = true;
       misc.disable_splash_rendering = true;
 
