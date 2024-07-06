@@ -29,7 +29,7 @@ with config.lib.stylix.colors;
   * {
     padding: 0;
     margin: 0;
-    font-weight: bold;
+    font-family: "Noto Sans";
   }
 
   window#waybar {
