@@ -7,6 +7,7 @@
     ./idle.nix
     ./rofi/rofi.nix
     ./waybar/bar.nix
+    ./swaync/swaync.nix
   ];
 
   #programs.hyprlock.enable = true;
@@ -22,6 +23,9 @@
     papirus-icon-theme
     waybar
     swaynotificationcenter
+    overskride
+    networkmanagerapplet
+    sway-contrib.grimshot
   ];
 
   services.playerctld.enable = true;
@@ -43,6 +47,13 @@
         "swayosd-server"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "waybar"
+        "swaync"
+      ];
+
+      env = [
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DESKTOP,Hyprland"
       ];
 
       exec = [
