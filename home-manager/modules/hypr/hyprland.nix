@@ -60,9 +60,21 @@
         "swww img ${config.stylix.image}"
       ];
 
+      windowrule = [
+        "opacity 0.9 0.9,(wezterm)$"
+      ];
+
+      layerrule = [
+        "blur,waybar"
+      ];
+
+      general.gaps_out = 10;
+      general.gaps_in = 3;
+
       input.kb_options = "caps:swapescape";
-      decoration.blur.enabled = false;
+      #decoration.blur.enabled = false;
       decoration.drop_shadow = false;
+      decoration.rounding = 10;
 
       misc.vfr = true;
       misc.disable_hyprland_logo = true;

@@ -2,7 +2,7 @@
 {
   stylix.enable = true;
   stylix.autoEnable = true;
-  stylix.image = ./astro.jpg;
+  stylix.image = ./abstract.jpg;
   stylix.polarity = "dark";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
   stylix.fonts.sizes.applications = 10;

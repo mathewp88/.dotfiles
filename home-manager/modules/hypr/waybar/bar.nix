@@ -36,7 +36,7 @@ with config.lib.stylix.colors;
     font-size: 13pt;
     border-radius: 8;
     border: 1px solid #${base0D};
-    background: rgba(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b}, 0.5); }
+    background: rgba(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b}, 0.8); }
 
   #cpu,
   #memory,
