@@ -18,6 +18,7 @@
     # networking tools
 
     # misc
+    pavucontrol
     which
     tree
     trash-cli
