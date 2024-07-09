@@ -1,4 +1,6 @@
-{ pkgs, lib, spicetify-nix, ... }:
+{ config, pkgs, lib, spicetify-nix, ... }:
+
+with config.lib.stylix.colors;
 let
   spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
 in
@@ -15,8 +17,32 @@ in
   programs.spicetify =
     {
       enable = true;
-      theme = spicePkgs.themes.catppuccin;
-      colorScheme = "mocha";
+      # custom Dribbblish theme
+      theme = spicePkgs.themes.Dribbblish;
+
+      # specify that we want to use our custom colorscheme
+      colorScheme = "custom";
+
+      # color definition for custom color scheme. (rosepine)
+      customColorScheme = {
+        text = "${base0A}";
+        subtext = "${base05}";
+        sidebar-text = "${base05}";
+        main = "${base00}";
+        sidebar = "${base01}";
+        player = "${base00}";
+        card = "${base00}";
+        shadow = "${base01}";
+        selected-row = "${base03}";
+        button = "${base0B}";
+        button-active = "${base0F}";
+        button-disabled = "${base0F}";
+        tab-active = "${base0F}";
+        notification = "${base0C}";
+        notification-error = "${base08}";
+        misc = "${base03}";
+      };
+
 
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay

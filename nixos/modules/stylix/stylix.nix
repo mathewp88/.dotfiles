@@ -4,7 +4,7 @@
   stylix.autoEnable = true;
   stylix.image = ./abstract.jpg;
   stylix.polarity = "dark";
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
   stylix.fonts.sizes.applications = 10;
   stylix.fonts.sizes.desktop = 10;
   stylix.fonts.sizes.popups = 10;
