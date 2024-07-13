@@ -1,4 +1,4 @@
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, ... }:
 {
   services.xserver.displayManager.gdm.enable = true;
   programs.hyprland = {
@@ -7,11 +7,12 @@
   };
 
   xdg.portal.enable = true;
-  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   security.pam.services.gdm.enableGnomeKeyring = true;
+  security.pam.services.gdm-password.enableGnomeKeyring = true;
   security.pam.services.hyprlock.text = lib.readFile "${pkgs.hyprlock}/etc/pam.d/hyprlock";
-  
+
   environment.systemPackages = with pkgs; [
     polkit_gnome # For auth in wm
     cinnamon.nemo-with-extensions
