@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -14,10 +14,8 @@
 
   services.xserver.enable = true;
 
-  services.xserver.desktopManager.gnome.enable = true;
-  
   services.printing.enable = true;
-
+  networking.firewall.enable = true;
   services.libinput.enable = true;
 
   users.users.mathai = {
@@ -33,7 +31,7 @@
   # Allow unpackaged binaries to run
   programs.nix-ld.enable = true;
   programs.nix-ld.package = pkgs.nix-ld-rs;
-  
+
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;

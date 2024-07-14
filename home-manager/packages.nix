@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
@@ -18,8 +18,6 @@
     unzip
     p7zip
 
-    # networking tools
-
     # misc
     pavucontrol
     which
@@ -33,8 +31,6 @@
     ffmpeg
     gh
 
-    # system call monitoring
-    
 
     # system tools
     bottom

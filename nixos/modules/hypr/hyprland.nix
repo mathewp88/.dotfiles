@@ -1,6 +1,19 @@
 { lib, pkgs, ... }:
 {
+
   services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    nautilus
+    gnome-music
+    gnome-terminal
+    epiphany
+    geary
+    gnome-characters
+  ]);
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -11,6 +24,7 @@
 
   security.pam.services.gdm.enableGnomeKeyring = true;
   security.pam.services.gdm-password.enableGnomeKeyring = true;
+
   security.pam.services.hyprlock.text = lib.readFile "${pkgs.hyprlock}/etc/pam.d/hyprlock";
 
   environment.systemPackages = with pkgs; [
