@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   imports = [
     ./stylix/stylix.nix
@@ -6,5 +6,6 @@
     ./virualisation/docker.nix
     ./services
     ./hypr/hyprland.nix
+    ./packages.nix
   ];
 }
