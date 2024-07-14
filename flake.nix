@@ -1,5 +1,5 @@
 {
-  description = "A simple NixOS flake";
+  description = "Mathai's Flake";
 
   inputs = {
     # NixOS official package source, using the nixos-23.11 branch here
