@@ -1,4 +1,4 @@
-{config, pkgs, lib, inputs, ... }:
+{ config, pkgs, ... }:
 {
 
   imports = [
@@ -10,7 +10,7 @@
     ./swaync/swaync.nix
   ];
 
-gtk.iconTheme.name = "Papirus-Dark";
+  gtk.iconTheme.name = "Papirus-Dark";
 
   home.packages = with pkgs; [
     swww
