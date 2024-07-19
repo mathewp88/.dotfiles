@@ -34,10 +34,14 @@ alias e='exit'
 alias update='nix flake update ~/.dotfiles'
 alias rebuild='nh os switch'
 alias clean='nh clean all --keep=5'
+alias rm='trash'
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Remove Logging for direnv
+export DIRENV_LOG_FORMAT=""
 
 # Getting nvim
 if [ ! -d ~/.config/nvim ]
