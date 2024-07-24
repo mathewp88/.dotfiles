@@ -1,3 +1,0 @@
-[submodule "home-manager/modules/shell/nvim"]
-	path = home-manager/modules/shell/nvim
-	url = https://github.com/mathewp88/nvim.git
