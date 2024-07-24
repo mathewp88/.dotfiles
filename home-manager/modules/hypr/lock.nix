@@ -8,7 +8,7 @@ with config.lib.stylix.colors;
       background = [
         {
           monitor = "";
-          #path = "${config.stylix.image}";
+          path = "${config.stylix.image}";
           color = "rgb(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b})";
           blur_passes = 2;
           contrast = 0.8916;
