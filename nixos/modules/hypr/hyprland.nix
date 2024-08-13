@@ -30,6 +30,6 @@
 
   environment.systemPackages = with pkgs; [
     polkit_gnome # For auth in wm
-    cinnamon.nemo-with-extensions
+    nemo-with-extensions
   ];
 }

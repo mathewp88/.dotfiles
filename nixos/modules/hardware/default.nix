@@ -29,11 +29,9 @@
     # update the CPU microcode for Intel processors.
     cpu.amd.updateMicrocode = true;
 
-    # Enable OpenGL drivers
-    opengl = {
+    graphics = {
       enable = true;
-      # driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
   };
 
