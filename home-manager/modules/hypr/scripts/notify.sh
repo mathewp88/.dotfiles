@@ -28,8 +28,8 @@ while [[ 0 -eq 0 ]]; do
       sleep 60
 		fi
 	else
-    low_batt=1
-    crit_batt=1
+    low_bat=1
+    crit_bat=1
 		sleep 600
 	fi
   done

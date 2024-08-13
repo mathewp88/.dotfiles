@@ -36,7 +36,7 @@
 
     # system tools
     bottom
-    nvtop
+    nvtopPackages.full
     sysstat
     lm_sensors # for `sensors` command
     ethtool

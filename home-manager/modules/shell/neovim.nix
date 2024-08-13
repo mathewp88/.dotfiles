@@ -4,7 +4,7 @@ let
   linker = lib.fileContents "${pkgs.binutils}/nix-support/dynamic-linker";
 in
 {
-  stylix.targets.vim.enable = false;
+  stylix.targets.neovim.enable = false;
 
   programs.lazygit.enable = true;
 

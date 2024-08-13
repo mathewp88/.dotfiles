@@ -28,7 +28,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix.trustedUsers = [ "root" "@wheel" ];
+  nix.settings.trusted-users = [ "root" "@wheel" ];
 
   # Allow unpackaged binaries to run
   programs.nix-ld.enable = true;
