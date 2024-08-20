@@ -33,6 +33,10 @@
 
     # Notes
     obsidian
+    zotero
+    
+    # robotics
+    qgroundcontrol
 
     # system tools
     bottom

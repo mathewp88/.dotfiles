@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
 
   imports = [
@@ -45,9 +45,18 @@
 
   # p10k config
   home.file.".p10k.zsh".source = ./.p10k.zsh;
+  
+  # Backup Terminal
+  # programs.kitty = {
+  #   enable = true;
+  #   font.size = lib.mkForce 14;
+  #   font.name = lib.mkForce "JetBrainsMono Nerd Font";
+  #   shellIntegration.enableZshIntegration = true;
+  # };
 
   programs.wezterm = {
     enable = true;
+    package = pkgs.wezterm;
     extraConfig = builtins.readFile ./wezterm.lua;
   };
 }
