@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 {
 
   imports = [
@@ -56,7 +56,7 @@
 
   programs.wezterm = {
     enable = true;
-    package = pkgs.wezterm;
+    package = inputs.wezterm-flake.packages.${pkgs.system}.default;
     extraConfig = builtins.readFile ./wezterm.lua;
   };
 }
