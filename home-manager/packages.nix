@@ -15,6 +15,11 @@
     # ESSENTIALS
     gcc
 
+    # books
+    helvetica-neue-lt-std
+    calibre
+    foliate
+
     # archives
     zip
     xz
