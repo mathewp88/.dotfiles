@@ -24,7 +24,6 @@
     libnotify
     waybar
     swaynotificationcenter
-    blueman
     networkmanagerapplet
     sway-contrib.grimshot
   ];

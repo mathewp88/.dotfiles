@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 
 {
   # import the flake's module for your system
@@ -15,7 +15,7 @@
         hidePodcasts
         shuffle # shuffle+ (special characters are sanitized out of extension names)
       ];
-      theme = spicePkgs.themes.ziro;
-      colorScheme = "rose-pine";
+      theme = lib.mkForce spicePkgs.themes.ziro;
+      colorScheme = lib.mkForce "rose-pine";
     };
 }

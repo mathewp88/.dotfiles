@@ -83,7 +83,7 @@ with config.lib.stylix.colors;
           halign = "center";
           valign = "top";
         }
- 
+
         # Date
         {
           monitor = "";
@@ -129,7 +129,7 @@ with config.lib.stylix.colors;
           text = ''cmd[update:100] echo "$(${builtins.toString ./.}/scripts/playerctlock.sh --source)"'';
           color = "rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.6)";
           font_size = 10;
-          font_family = "JetBrains Mono Nerd Font Mono"; 
+          font_family = "JetBrains Mono Nerd Font Mono";
           position = "-840, -330";
           halign = "right";
           valign = "center";
@@ -158,7 +158,7 @@ with config.lib.stylix.colors;
           halign = "left";
           valign = "center";
         }
-        
+
         # Weather
         {
           monitor = "";
