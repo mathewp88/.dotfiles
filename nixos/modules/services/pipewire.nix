@@ -6,6 +6,10 @@
   hardware.pulseaudio.enable = lib.mkForce false;
   security.rtkit.enable = true;
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
