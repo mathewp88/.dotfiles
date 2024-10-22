@@ -6,6 +6,7 @@
     fastfetch
     ncdu
     duf
+    appimage-run
 
     mangohud
 
