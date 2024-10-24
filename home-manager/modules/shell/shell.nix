@@ -56,7 +56,7 @@
 
   programs.wezterm = {
     enable = true;
-    package = inputs.wezterm-flake.packages.${pkgs.system}.default;
+    # package = inputs.wezterm-flake.packages.${pkgs.system}.default;
     extraConfig = builtins.readFile ./wezterm.lua;
   };
 }

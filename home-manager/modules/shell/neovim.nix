@@ -14,7 +14,7 @@ in
     enable = true;
     #withRuby = true;
     withPython3 = true;
-    withNodeJs = true;
+    # withNodeJs = true;
     vimAlias = true;
     vimdiffAlias = true;
     viAlias = true;
