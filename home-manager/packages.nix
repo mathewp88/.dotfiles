@@ -7,6 +7,7 @@
     ncdu
     duf
     appimage-run
+    image-roll
 
     mangohud
 
@@ -15,7 +16,7 @@
 
     # books
     helvetica-neue-lt-std
-    calibre
+    # calibre
     foliate
 
     # archives
