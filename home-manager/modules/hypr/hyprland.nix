@@ -30,9 +30,6 @@
 
   services.playerctld.enable = true;
   
-  # Setup Scripts
-  home.file.".config/lock/scripts".source = config.lib.file.mkOutOfStoreSymlink ./scripts;
-
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -47,10 +44,10 @@
       input.numlock_by_default = true;
 
       exec-once = [
-        "brightnessctl s $(cat ~/.config/lock/bright)"
+        "brightnessctl s $(cat ~/.dotfiles/home-manager/modules/hypr/scripts/bright)"
         "swww-daemon"
         "swayosd-server"
-        "~/.config/lock/scripts/notify.sh"
+        "~/.dotfiles/home-manager/modules/hypr/scripts/notify.sh"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "waybar"
         "swaync"

@@ -63,7 +63,7 @@
         },
         {
           "active": false,
-          "command": "~/.config/lock/scripts/powermenu.sh",
+          "command": "~/.dotfiles/home-manager/modules/hypr/scripts/powermenu.sh",
           "label": "",
           "type": "button"
         }
