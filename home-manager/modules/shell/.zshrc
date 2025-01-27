@@ -43,9 +43,3 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Remove Logging for direnv
 export DIRENV_LOG_FORMAT=""
-
-# Getting nvim
-if [ ! -d ~/.config/nvim ]
-then
-    git clone https://github.com/mathewp88/nvim.git ~/.config/nvim
-fi

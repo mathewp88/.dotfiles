@@ -1,10 +1,13 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   linker = lib.fileContents "${pkgs.binutils}/nix-support/dynamic-linker";
 in
 {
   stylix.targets.neovim.enable = false;
+  
+  home.file."${config.home.homeDirectory}/.config/nvim".source = 
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/nvim";
 
   programs.lazygit.enable = true;
 
