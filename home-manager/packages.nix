@@ -55,5 +55,7 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+    nmap # network scanning
+    xorg.xhost # mainly for docker really...
   ];
 }

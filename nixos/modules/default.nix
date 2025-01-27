@@ -6,6 +6,5 @@
     ./virualisation/docker.nix
     ./services
     ./hypr/hyprland.nix
-    ./packages.nix
   ];
 }
