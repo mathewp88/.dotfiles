@@ -4,6 +4,7 @@
   imports = [
     ./neovim.nix
     ./tmux.nix
+    ./yazi.nix
   ];
 
   # Packages requiered for zsh

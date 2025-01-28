@@ -34,7 +34,7 @@
     vlc
 
     # nix related
-    nix-prefetch-git
+    nurl
 
     # productivity
     ffmpeg
