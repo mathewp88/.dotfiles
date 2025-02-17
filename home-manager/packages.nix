@@ -13,6 +13,7 @@
 
     # ESSENTIALS
     gcc
+    bitwarden
     xfce.xfce4-power-manager
 
     # books
@@ -46,6 +47,8 @@
 
     # robotics
     gnome-text-editor
+    arduino-cli
+    minicom
     kicad
 
     # system tools
