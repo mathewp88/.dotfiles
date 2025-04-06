@@ -51,6 +51,12 @@
   ];
 
   environment.variables.EDITOR = "nvim";
+  
+  environment.sessionVariables = {
+  EDITOR = "nvim";
+  BROWSER = "firefox";
+  TERMINAL = "kitty";
+};
 
   programs.nh = {
     enable = true;

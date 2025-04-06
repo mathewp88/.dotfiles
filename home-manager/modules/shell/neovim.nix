@@ -5,6 +5,16 @@ let
 in
 {
   stylix.targets.neovim.enable = false;
+
+  xdg.desktopEntries."nvim" = {
+     name = "Neovim";
+     comment = "Edit text files";
+     exec = "kitty -e nvim %F";
+     icon = "nvim";
+     terminal = false;
+     type = "Application";
+     categories = [ "Utility" "TextEditor" ];
+  };
   
   home.file."${config.home.homeDirectory}/.config/nvim".source = 
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/nvim";
