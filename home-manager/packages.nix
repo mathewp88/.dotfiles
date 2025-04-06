@@ -8,6 +8,7 @@
     duf
     appimage-run
     image-roll
+    librewolf
 
     mangohud
 
@@ -46,10 +47,8 @@
     zotero
 
     # robotics
-    gnome-text-editor
     arduino-cli
     minicom
-    kicad
 
     # system tools
     bottom

@@ -2,7 +2,7 @@
 {
   stylix.enable = true;
   stylix.autoEnable = true;
-  stylix.image = ./abstract.jpg;
+  stylix.image = ./cherry.png;
   stylix.polarity = "dark";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
   stylix.fonts.sizes.applications = 10;
