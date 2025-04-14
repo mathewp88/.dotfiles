@@ -55,6 +55,8 @@
     settings = {
       enable_audio_bell = false;
       window_padding_width = 5;
+  		copy_on_select = true;
+  		clipboard_control = "write-clipboard read-clipboard write-primary read-primary";
     };
     keybindings = {
       "ctrl+c" = "copy_or_interrupt";
