@@ -27,6 +27,7 @@
         "$mainMod SHIFT,K,movewindow,u"
         "$mainMod SHIFT,H,movewindow,l"
         "$mainMod SHIFT,L,movewindow,r"
+        "$mainMod, T, togglefloating"
         "$mainMod, M, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
         "$mainMod, mouse_down, workspace, e+1"

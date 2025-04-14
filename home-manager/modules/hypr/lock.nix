@@ -39,12 +39,12 @@ with config.lib.stylix.colors;
           dots_size = 0.1; # Scale of input-field height, 0.2 - 0.8
           dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
           dots_center = true;
-          outer_color = "rgb(${base00-rgb-r}, ${base00-rgb-g}, ${base00-rgb-b})";
-          inner_color = "rgb(${base00-rgb-r}, ${base00-rgb-g}, ${base00-rgb-b})";
+          outer_color = "rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.02)";
+          inner_color = "rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.02)";
           font_color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
           fade_on_empty = false;
-          check_color = "rgb(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b})";
-          fail_color = "rgb(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b})";
+          check_color = "rgba(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b}, 0.2)";
+          fail_color = "rgba(${base08-rgb-r}, ${base08-rgb-g}, ${base08-rgb-b}, 0.1)";
           fail_transition = 400;
           #font_family = "JetBrains Mono Nerd Font Mono";
           placeholder_text = ''<span foreground="##cdd6f4">  $USER</span>'';

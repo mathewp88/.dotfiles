@@ -14,13 +14,15 @@
 
     # ESSENTIALS
     gcc
-    bitwarden
+    # bitwarden
+    keepassxc
     xfce.xfce4-power-manager
 
     # books
-    helvetica-neue-lt-std
-    # calibre
-    foliate
+    #helvetica-neue-lt-std
+    calibre
+
+    # foliate
 
     # archives
     zip
