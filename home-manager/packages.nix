@@ -42,7 +42,6 @@
 
     # productivity
     ffmpeg
-    gh
 
     # Notes
     obsidian
