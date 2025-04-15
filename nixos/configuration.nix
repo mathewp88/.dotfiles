@@ -18,8 +18,12 @@
   networking.firewall.enable = true;
   services.libinput.enable = true;
 
+  sops.secrets.mathai-password.neededForUsers = true;
+  users.mutableUsers = false;
+
   users.users.mathai = {
     isNormalUser = true;
+    hashedPasswordFile = config.sops.secrets.mathai-password.path;
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
       firefox
@@ -57,6 +61,16 @@
   BROWSER = "firefox";
   TERMINAL = "kitty";
 };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      X11Forwarding = true;
+      PermitRootLogin = "no"; # disable root login
+      PasswordAuthentication = false; # disable password login
+    };
+    openFirewall = true;
+  };
 
   programs.nh = {
     enable = true;

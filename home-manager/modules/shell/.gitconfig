@@ -7,11 +7,3 @@
 [core]
 	editor = nvim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-
-[credential "https://github.com"]
-	helper = 
-	helper = !/etc/profiles/per-user/mathai/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/etc/profiles/per-user/mathai/bin/gh auth git-credential
-
