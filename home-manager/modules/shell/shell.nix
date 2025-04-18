@@ -47,8 +47,10 @@
   home.file.".p10k.zsh".source = ./.p10k.zsh;
 
   # Terminal
+  stylix.targets.kitty.enable = false;
   programs.kitty = {
     enable = true;
+    themeFile  = "rose-pine";
     font.size = lib.mkForce 14;
     font.name = lib.mkForce "JetBrainsMono Nerd Font";
     shellIntegration.enableZshIntegration = true;
