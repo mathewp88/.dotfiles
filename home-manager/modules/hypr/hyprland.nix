@@ -47,7 +47,6 @@
         "brightnessctl s $(cat ~/.dotfiles/home-manager/modules/hypr/scripts/bright)"
         "swww-daemon"
         "swayosd-server"
-        "xfce4-power-manager"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "waybar"
         "swaync"

@@ -9,6 +9,7 @@
     appimage-run
     image-roll
     librewolf
+    interception-tools-plugins.caps2esc
 
     mangohud
 
@@ -17,7 +18,6 @@
     sops
     # bitwarden
     keepassxc
-    xfce.xfce4-power-manager
 
     # books
     #helvetica-neue-lt-std
@@ -54,7 +54,7 @@
 
     # system tools
     bottom
-    nvtopPackages.full
+    nvitop
     sysstat
     lm_sensors # for `sensors` command
     ethtool

@@ -5,5 +5,6 @@
     ./pipewire.nix
     ./wine.nix
     ./sops.nix
+    ./keyd.nix
   ];
 }
