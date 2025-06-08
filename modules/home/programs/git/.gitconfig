@@ -1,0 +1,74 @@
+[user]
+        name = Mathai Mathew Pulicken
+        email = 49433106+mathewp88@users.noreply.github.com
+        username = mathewp88
+[init]
+        defaultBranch = main
+[core]
+	      editor = nvim
+        excludesfile = ~/.gitignore
+        whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[column]
+        ui = auto
+[branch]
+        sort = -committerdate
+[tag]
+        sort = version:refname
+[diff]
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+[push]
+        default = simple
+        autoSetupRemote = true
+        followTags = true
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+[help]
+        autocorrect = prompt
+[commit]
+        verbose = true
+[rerere]
+        enabled = true
+        autoupdate = true
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
+[alias]
+        # Shortcuts
+        ch = checkout
+        br = branch
+        st = status
+        br = branch
+        cm = commit -m
+        c = commit
+        
+        # Soft reset last commit
+        back = reset --soft HEAD~1
+
+        # Delete unstaged changes
+        hard = reset --hard
+
+        # info of last commit
+        last = log -1 HEAD
+
+        # More commands in one
+        aa = !git add -A && git status
+        cma = !git add -A && git commit -m
+
+        # Colored log
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        ls = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+
+        # Remove gone branches (no longer on remote)
+        gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
+
+        # Branches sorted by last modified
+        b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+        # List Aliases
+        al = "!git config -l | grep alias | cut -c 7-"
