@@ -44,6 +44,7 @@ in
           "waybar"
           "swaync"
           "nm-applet"
+          "clipse -listen"
         ];
 
         env = [
@@ -63,6 +64,10 @@ in
           "workspace special:magic silent, title:Passwords - KeePassXC"
           "workspace special:magic silent, title:Passwords.kdbx [Locked] - KeePassXC"
           "opacity 0.95 override 0.95 override 0.95 override, class:kitty"
+
+          "float, class:(clipse)"
+          "size 622 652, class:(clipse)"
+          "stayfocused, class:(clipse)"
         ];
 
         general.gaps_out = 6;
