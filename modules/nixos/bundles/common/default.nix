@@ -21,7 +21,7 @@ in
       wget
       curl
       git
-      gparted
+      fastfetch
     ];
 
     services = {

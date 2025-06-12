@@ -18,7 +18,6 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
 
-      firefox
       keepassxc
 
       # Video/Audio
@@ -26,10 +25,6 @@ in
       loupe
       pavucontrol
     ];
-
-    home.sessionVariables = {
-      BROWSER = "firefox";
-    };
 
     olympus = {
       misc = {
