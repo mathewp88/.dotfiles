@@ -27,7 +27,7 @@ in
         options = {
           localAnnounceEnabled = true;
           relaysEnabled = true;
-          options.urAccepted = -1;
+          urAccepted = -1;
         };
         devices = {
           "phone" = {
