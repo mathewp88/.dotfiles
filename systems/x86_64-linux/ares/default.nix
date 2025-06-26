@@ -31,6 +31,7 @@ with lib.${namespace};
     };
 
     programs = {
+      firefox = enabled;
       stylix = enabled;
       wine = enabled;
     };

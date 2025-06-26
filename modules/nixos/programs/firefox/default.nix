@@ -1,6 +1,7 @@
 { config
 , lib
 , namespace
+, pkgs
 , ...
 }:
 with lib;
@@ -15,13 +16,14 @@ in
 
   config = mkIf cfg.enable {
 
-    home.sessionVariables = {
+    environment.sessionVariables = {
       BROWSER = "firefox";
     };
 
     programs.firefox = {
       enable = true;
-      package = pkgs.librewolf;
+      package = pkgs.firefox;
     };
+
   };
 }
