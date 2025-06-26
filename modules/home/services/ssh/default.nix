@@ -42,6 +42,13 @@ in
           identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
           identitiesOnly = true;
         };
+
+        "neon" = {
+          user = "mathai_mathew";
+          hostname = "neon.rrcx.tk";
+          identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
+          identitiesOnly = true;
+        };
       };
     };
     services.ssh-agent.enable = true;

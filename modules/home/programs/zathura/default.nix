@@ -34,6 +34,7 @@ in
         scroll-step = 50;
         zoom-min = 10;
         render-loading = false;
+        selection-clipboard = "clipboard";
       };
       mappings = {
         "e" = "toggle_fullscreen";
