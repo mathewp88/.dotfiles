@@ -45,7 +45,7 @@ in
 
         "neon" = {
           user = "mathai_mathew";
-          hostname = "neon.rrcx.tk";
+          hostname = "10.2.36.169";
           identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
           identitiesOnly = true;
         };
