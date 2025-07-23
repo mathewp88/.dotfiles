@@ -9,9 +9,9 @@
 }:
 with lib;
 with lib.${namespace};
-with osConfig.lib.stylix.colors;
 let
   cfg = config.${namespace}.programs.waybar;
+  stylixColors = osConfig.lib.stylix.colors;
 in
 {
   options.${namespace}.programs.waybar = with types; {
@@ -30,18 +30,18 @@ in
       #temperature,
       #backlight {
         font-size: 11pt;
-        color: #${base05}; }
+        color: #${stylixColors.base05}; }
 
       #battery {
         font-size: 11pt;
-        color: #${base05}; }
+        color: #${stylixColors.base05}; }
 
       #network,
       #pulseaudio,
       #idle_inhibitor
       #bluetooth,
       #custom-notification {
-        color: #${base05}; }
+        color: #${stylixColors.base05}; }
 
       #idle_inhibitor {
         min-width: 20pt; }
@@ -55,8 +55,8 @@ in
       window#waybar {
         font-size: 13pt;
         border-radius: 8;
-        border: 1px solid #${base03};
-        background: rgba(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b}, 0.85); }
+        border: 1px solid #${stylixColors.base03};
+        background: rgba(${stylixColors.base01-rgb-r}, ${stylixColors.base01-rgb-g}, ${stylixColors.base01-rgb-b}, 0.85); }
 
       #cpu,
       #memory,
@@ -92,7 +92,7 @@ in
       #cpu {
         font-size: 0.95em;
         font-weight: bolder;
-        color: #${base05};
+        color: #${stylixColors.base05};
         transition: 400ms;
         animation: ws_normal 20s ease-out 10; }
 
@@ -120,16 +120,16 @@ in
         margin-top: 7px;
         margin-bottom: 7px;
         border-radius: 50px;
-        background-color: #${base05};
+        background-color: #${stylixColors.base05};
         transition: 100ms;
         animation: ws_normal 20s ease-out 10; }
 
       #workspaces button.empty {
-        background-color: #${base03}; }
+        background-color: #${stylixColors.base03}; }
 
       #workspaces button.active {
         min-width: 18pt;
-        background-color: #${base0D};
+        background-color: #${stylixColors.base0D};
         transition: 100ms; }
 
       #battery.full {

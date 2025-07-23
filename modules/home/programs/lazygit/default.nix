@@ -11,8 +11,12 @@ with lib.${namespace};
 let
   cfg = config.${namespace}.programs.lazygit;
   transparentButtons = mkBoolOpt false "${namespace}.programs.lazygit.trasparentButtons";
-  accent = "#${config.lib.stylix.colors.base0D}";
-  muted = "#${config.lib.stylix.colors.base03}";
+
+  stylixEnabled = config.${namespace}.programs.stylix.enable or false;
+
+  accent   = if stylixEnabled then "#${config.lib.stylix.colors.base0D}" else null;
+  muted    = if stylixEnabled then "#${config.lib.stylix.colors.base03}" else null;
+  selected = if stylixEnabled then "#${config.lib.stylix.colors.base02}" else null;
 in
 {
   options.${namespace}.programs.lazygit = with types; {
@@ -24,14 +28,14 @@ in
       enable = true;
       settings = lib.mkForce {
         gui = {
-          theme = {
+          theme = lib.mkIf stylixEnabled ({
             activeBorderColor = [
               accent
               "bold"
             ];
             inactiveBorderColor = [ muted ];
-            selectedLineBgColor = [ muted ];
-          };
+            selectedLineBgColor = [ selected ];
+          });
           showListFooter = false;
           showRandomTip = false;
           showCommandLog = false;

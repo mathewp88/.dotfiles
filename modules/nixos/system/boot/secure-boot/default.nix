@@ -12,8 +12,6 @@ let
 in
 {
 
-  imports = [ inputs.lanzaboote.nixosModules.lanzaboote ];
-
   options.${namespace}.system.boot.secure-boot = with types; {
     enable = mkBoolOpt false "Enable Lazenboote for secure-boot.";
     wait-for-network = mkBoolOpt false "Wait for network on servers";

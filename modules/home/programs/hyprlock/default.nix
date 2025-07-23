@@ -9,12 +9,12 @@
 }:
 with lib;
 with lib.${namespace};
-with osConfig.lib.stylix.colors;
 let
   cfg = config.${namespace}.programs.hyprlock;
   weatherScript = (pkgs.writeShellScriptBin "weather" (builtins.readFile ./scripts/weather.sh));
   infolockScript = (pkgs.writeShellScriptBin "infolock" (builtins.readFile ./scripts/infolock.sh));
   playerctlockScript = (pkgs.writeShellScriptBin "playerctlock" (builtins.readFile ./scripts/playerctlock.sh));
+  stylixColors = osConfig.lib.stylix.colors;
 in
 {
   options.${namespace}.programs.hyprlock = with types; {
@@ -38,7 +38,7 @@ in
           {
             monitor = "";
             path = "${osConfig.stylix.image}";
-            color = "rgb(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b})";
+            color = "rgb(${stylixColors.base01-rgb-r}, ${stylixColors.base01-rgb-g}, ${stylixColors.base01-rgb-b})";
             blur_passes = 2;
             contrast = 0.8916;
             brightness = 0.7172;
@@ -65,12 +65,12 @@ in
             dots_size = 0.1; # Scale of input-field height, 0.2 - 0.8
             dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
             dots_center = true;
-            outer_color = "rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.02)";
-            inner_color = "rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.02)";
-            font_color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
+            outer_color = "rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.02)";
+            inner_color = "rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.02)";
+            font_color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             fade_on_empty = false;
-            check_color = "rgba(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b}, 0.2)";
-            fail_color = "rgba(${base08-rgb-r}, ${base08-rgb-g}, ${base08-rgb-b}, 0.1)";
+            check_color = "rgba(${stylixColors.base01-rgb-r}, ${stylixColors.base01-rgb-g}, ${stylixColors.base01-rgb-b}, 0.2)";
+            fail_color = "rgba(${stylixColors.base08-rgb-r}, ${stylixColors.base08-rgb-g}, ${stylixColors.base08-rgb-b}, 0.1)";
             fail_transition = 400;
             #font_family = "JetBrains Mono Nerd Font Mono";
             placeholder_text = ''<span foreground="##cdd6f4">  $USER</span>'';
@@ -87,7 +87,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:100] echo -e "$(date +"%H")"'';
-            color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
+            color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             shadow_size = 3;
             shadow_color = "rgb(0,0,0)";
             shadow_boost = 1.2;
@@ -102,7 +102,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:100] echo -e "$(date +"%M")"'';
-            color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
+            color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             shadow_size = 3;
             shadow_color = "rgb(0,0,0)";
             shadow_boost = 1.2;
@@ -117,7 +117,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:100] echo -e "$(date +"%d %b %A")"'';
-            color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
+            color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             shadow_size = 3;
             shadow_color = "rgb(0,0,0)";
             shadow_boost = 1.2;
@@ -132,7 +132,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:100] echo "$(playerctlock --title) $(playerctlock --status)"'';
-            color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
+            color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 16;
             font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
             position = "0, -280";
@@ -144,7 +144,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:100] echo "$(playerctlock --length) "'';
-            color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
+            color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 11;
             font_family = "JetBrains Mono Nerd Font Mono";
             position = "-830, -310";
@@ -156,7 +156,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:100] echo "$(playerctlock --source)"'';
-            color = "rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.6)";
+            color = "rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.6)";
             font_size = 10;
             font_family = "JetBrains Mono Nerd Font Mono";
             position = "-830, -330";
@@ -168,7 +168,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:100] echo "$(playerctlock --album)"'';
-            color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
+            color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 10;
             font_family = "JetBrains Mono Nerd Font Mono";
             position = "840, -330";
@@ -180,7 +180,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:100] echo "$(playerctlock --artist)"'';
-            color = "rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.8)";
+            color = "rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.8)";
             font_size = 10;
             font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
             position = "840, -310";
@@ -192,7 +192,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:1000] echo "$(weather $(cat ${config.sops.secrets."weather/api".path}))"'';
-            color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
+            color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 10;
             font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
             position = "0, 465";
@@ -204,7 +204,7 @@ in
           {
             monitor = "";
             text = ''cmd[update:10000] echo -e "$(infolock)"'';
-            color = "rgb(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b})";
+            color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 12;
             font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
             position = "-20, -510";

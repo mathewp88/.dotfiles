@@ -9,9 +9,9 @@
 }:
 with lib;
 with lib.${namespace};
-with osConfig.lib.stylix.colors;
 let
   cfg = config.${namespace}.desktop.hyprland;
+  stylixColors = osConfig.lib.stylix.colors;
 in
 {
   options.${namespace}.desktop.hyprland = with types; {
@@ -73,8 +73,8 @@ in
 
         general.gaps_out = 6;
         general.gaps_in = 3;
-        general."col.active_border" = lib.mkForce "rgb(${base03})";
-        general."col.inactive_border" = lib.mkForce "rgb(${base02})";
+        general."col.active_border" = lib.mkForce "rgb(${stylixColors.base03})";
+        general."col.inactive_border" = lib.mkForce "rgb(${stylixColors.base02})";
 
         input.kb_options = "ctrl:nocaps";
         decoration.blur.enabled = true;

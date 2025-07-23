@@ -16,8 +16,6 @@ in
     enable = mkBoolOpt false "Enable stylix";
   };
 
-  imports = [ inputs.stylix.nixosModules.stylix ];
-
   config = mkIf cfg.enable {
     stylix = {
       enable = true;

@@ -12,8 +12,6 @@ let
   cfg = config.${namespace}.programs.sops;
 in
 {
-  imports = [ inputs.sops-nix.nixosModules.sops ];
-
   options.${namespace}.programs.sops = with types; {
     enable = mkBoolOpt false "Enable sops";
   };

@@ -12,8 +12,6 @@ let
   cfg = config.${namespace}.programs.spotify;
 in
 {
-  imports = [ inputs.spicetify-nix.homeManagerModules.default ];
-
   options.${namespace}.programs.spotify = with types; {
     enable = mkBoolOpt false "Enable Spotify";
   };
