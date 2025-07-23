@@ -28,7 +28,6 @@ in
       duf
       appimage-run
       which
-      tree
       trash-cli
       tldr
 

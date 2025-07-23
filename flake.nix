@@ -14,6 +14,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Disko for deterministic filesytems
+    disko.url = "github:nix-community/disko";
+
     # Secure boot
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
@@ -87,7 +90,31 @@
 
       overlays = with inputs; [ ];
 
-      system.modules.nixos = with inputs; [ ];
+      systems.modules.nixos = with inputs; [
+        lanzaboote.nixosModules.lanzaboote
+        stylix.nixosModules.stylix
+        sops-nix.nixosModules.sops
+      ];
+
+      homes.modules = with inputs; [
+        sops-nix.homeManagerModules.sops
+        spicetify-nix.homeManagerModules.default
+      ];
+
+      systems.hosts.ares.modules = with inputs; [
+        # Same hardware as the victus
+        nixos-hardware.nixosModules.omen-16-n0280nd
+      ];
+
+      systems.hosts.hermes.modules = with inputs; [
+        nixos-hardware.nixosModules.raspberry-pi-4
+      ];
+
+      # Issue with snowfall, stylix (in home) fails eval as NixOS doesn't link it
+      # This will need to be added to any system not using stylix
+      homes.users."mathai@hermes".modules = with inputs; [
+        stylix.homeManagerModules.stylix
+      ];
 
       templates = import ./templates { };
     };

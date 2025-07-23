@@ -1,9 +1,7 @@
-{ inputs, config, lib, modulesPath, ... }:
+{ config, lib, modulesPath, ... }:
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    # Same hardware as the victus
-    inputs.nixos-hardware.nixosModules.omen-16-n0280nd
   ];
 
   boot.initrd.availableKernelModules = [

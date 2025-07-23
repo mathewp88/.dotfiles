@@ -9,9 +9,9 @@
 }:
 with lib;
 with lib.${namespace};
-with osConfig.lib.stylix.colors;
 let
   cfg = config.${namespace}.programs.swaync;
+  stylixColors = osConfig.lib.stylix.colors;
 in
 {
   options.${namespace}.programs.swaync = with types; {
@@ -69,7 +69,7 @@ in
         border-left: 1px solid rgba(164, 162, 167, 0.15);
         border-right: 1px solid rgba(128, 127, 132, 0.15);
         border-bottom: 1px solid rgba(128, 127, 132, 0.15);*/
-        background-color: #${base01};
+        background-color: #${stylixColors.base01};
         padding: 0.818rem;
         padding-right: unset;
         margin-right: unset;
@@ -79,7 +79,7 @@ in
       .control-center .notification-row .notification-background .notification.normal .notification-content label,
       .floating-notifications.background .notification-background .notification.low .notification-content label,
       .floating-notifications.background .notification-background .notification.normal .notification-content label {
-        color: #${base05};
+        color: #${stylixColors.base05};
       }
 
       .control-center .notification-row .notification-background .notification..notification-content image,
@@ -87,30 +87,30 @@ in
       .floating-notifications.background .notification-background .notification.low .notification-content image,
       .floating-notifications.background .notification-background .notification.normal .notification-content image {
         background-color: unset;
-        color: #${base05};
+        color: #${stylixColors.base05};
       }
 
       .control-center .notification-row .notification-background .notification.low .notification-content .body,
       .control-center .notification-row .notification-background .notification.normal .notification-content .body,
       .floating-notifications.background .notification-background .notification.low .notification-content .body,
       .floating-notifications.background .notification-background .notification.normal .notification-content .body {
-        color: #${base04};
+        color: #${stylixColors.base04};
       }
 
       .control-center .notification-row .notification-background .notification.critical .notification-content,
       .floating-notifications.background .notification-background .notification.critical .notification-content {
-        background-color: #${base01};
+        background-color: #${stylixColors.base01};
       }
 
       .control-center .notification-row .notification-background .notification.critical .notification-content image,
       .floating-notifications.background .notification-background .notification.critical .notification-content image{
         background-color: unset;
-        color: #${base09};
+        color: #${stylixColors.base09};
       }
 
       .control-center .notification-row .notification-background .notification.critical .notification-content label,
       .floating-notifications.background .notification-background .notification.critical .notification-content label {
-        color: #${base08};
+        color: #${stylixColors.base08};
       }
 
       .control-center .notification-row .notification-background .notification .notification-content .summary,
@@ -156,24 +156,24 @@ in
 
       .control-center .notification-row .close-button:hover,
       .floating-notifications.background .close-button:hover {
-        background-color: rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.15);
+        background-color: rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.15);
       }
 
       .control-center {
         border-radius: 1.705rem;
         -gtk-outline-radius: 1.705rem;
-        border-top: 1px solid rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.19);
-        border-left: 1px solid rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.19);
-        border-right: 1px solid rgba(${base04-rgb-r}, ${base04-rgb-g}, ${base04-rgb-b}, 0.145);
-        border-bottom: 1px solid rgba(${base04-rgb-r}, ${base04-rgb-g}, ${base04-rgb-b}, 0.145);
-        box-shadow: 0px 2px 3px rgba(${base01-rgb-r}, ${base01-rgb-g}, ${base01-rgb-b}, 0.45);
+        border-top: 1px solid rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.19);
+        border-left: 1px solid rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.19);
+        border-right: 1px solid rgba(${stylixColors.base04-rgb-r}, ${stylixColors.base04-rgb-g}, ${stylixColors.base04-rgb-b}, 0.145);
+        border-bottom: 1px solid rgba(${stylixColors.base04-rgb-r}, ${stylixColors.base04-rgb-g}, ${stylixColors.base04-rgb-b}, 0.145);
+        box-shadow: 0px 2px 3px rgba(${stylixColors.base01-rgb-r}, ${stylixColors.base01-rgb-g}, ${stylixColors.base01-rgb-b}, 0.45);
         margin: 7px;
-        background-color: #${base01};
+        background-color: #${stylixColors.base01};
         padding: 1.023rem;
       }
 
       .control-center trough {
-        background-color: #${base00};
+        background-color: #${stylixColors.base00};
         border-radius: 9999px;
         -gtk-outline-radius: 9999px;
         min-width: 0.545rem;
@@ -185,15 +185,15 @@ in
         -gtk-outline-radius: 9999px;
         min-width: 0.273rem;
         min-height: 2.045rem;
-        background-color: rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.31);
+        background-color: rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.31);
       }
 
       .control-center slider:hover {
-        background-color: rgba(${base05-rgb-r}, ${base05-rgb-g}, ${base05-rgb-b}, 0.448);
+        background-color: rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.448);
       }
 
       .control-center slider:active {
-        background-color: #${base04};
+        background-color: #${stylixColors.base04};
       }
 
       /* title widget */
@@ -206,7 +206,7 @@ in
       .widget-title label {
         font-family: 'Gabarito', 'Lexend', sans-serif;
         font-size: 1.364rem;
-        color: #${base05};
+        color: #${stylixColors.base05};
         margin-left: 0.941rem;
       }
 
@@ -222,16 +222,16 @@ in
       .widget-title button label {
         font-family: 'Gabarito', sans-serif;
         font-size: 1.0409rem;
-        color: #${base05};
+        color: #${stylixColors.base05};
         margin-right: 0.841rem;
       }
 
       .widget-title button:hover {
-        background-color: rgba(${base04-rgb-r}, ${base04-rgb-g}, ${base04-rgb-b}, 0.3);
+        background-color: rgba(${stylixColors.base04-rgb-r}, ${stylixColors.base04-rgb-g}, ${stylixColors.base04-rgb-b}, 0.3);
       }
 
       .widget-title button:active {
-        background-color: rgba(${base04-rgb-r}, ${base04-rgb-g}, ${base04-rgb-b}, 0.7);
+        background-color: rgba(${stylixColors.base04-rgb-r}, ${stylixColors.base04-rgb-g}, ${stylixColors.base04-rgb-b}, 0.7);
       }
 
       /* Buttons widget */
@@ -240,7 +240,7 @@ in
         border-radius: 1.159rem;
         -gtk-outline-radius: 1.159rem;
         padding: 0.341rem;
-        background-color: rgba(${base00-rgb-r}, ${base00-rgb-g}, ${base00-rgb-b}, 0.9);
+        background-color: rgba(${stylixColors.base00-rgb-r}, ${stylixColors.base00-rgb-g}, ${stylixColors.base00-rgb-b}, 0.9);
         padding: unset;
       }
 
@@ -265,20 +265,20 @@ in
       .widget-buttons-grid>flowbox>flowboxchild>button label {
         font-family: "Materials Symbol Rounded";
         font-size: 1.3027rem;
-        color: #${base05};
+        color: #${stylixColors.base05};
       }
 
       .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-        background-color: rgba(${base04-rgb-r}, ${base04-rgb-g}, ${base04-rgb-b}, 0.3);
+        background-color: rgba(${stylixColors.base04-rgb-r}, ${stylixColors.base04-rgb-g}, ${stylixColors.base04-rgb-b}, 0.3);
       }
 
       .widget-buttons-grid>flowbox>flowboxchild>button:checked {
         /* OnePlus McClaren edition Orange accent */
-        background-color: #${base09};
+        background-color: #${stylixColors.base09};
       }
 
       .widget-buttons-grid>flowbox>flowboxchild>button:checked label {
-        color: #${base01};
+        color: #${stylixColors.base01};
       }
 
 
@@ -286,7 +286,7 @@ in
       .widget-volume,
       .widget-backlight,
       .widget-backlight#KB {
-        background-color: #${base00};
+        background-color: #${stylixColors.base00};
         padding: 9px;
         padding-left: 18px;
         margin: 12px;
@@ -311,7 +311,7 @@ in
       .widget-volume trough {
         /* OnePlus McClaren edition Orange accent */
         border:unset;
-        background-color: rgba(${base04-rgb-r}, ${base04-rgb-g}, ${base04-rgb-b}, 0.4);
+        background-color: rgba(${stylixColors.base04-rgb-r}, ${stylixColors.base04-rgb-g}, ${stylixColors.base04-rgb-b}, 0.4);
       }
 
       .widget-backlight trough slider,
@@ -319,7 +319,7 @@ in
       .widget-volume trough slider {
         /* OnePlus McClaren edition Orange accent */
         color:unset;
-        background-color: #${base09};
+        background-color: #${stylixColors.base09};
         border-radius: 100%;
         min-height: 1.25rem;
       }
@@ -327,7 +327,7 @@ in
       /* Mpris widget */
 
       .widget-mpris {
-        background-color: rgba(${base00-rgb-r}, ${base00-rgb-g}, ${base00-rgb-b}, 0.9);
+        background-color: rgba(${stylixColors.base00-rgb-r}, ${stylixColors.base00-rgb-g}, ${stylixColors.base00-rgb-b}, 0.9);
         padding: 8px;
         margin: 8px;  
         border-radius: 1.159rem;
