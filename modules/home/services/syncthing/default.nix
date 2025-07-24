@@ -16,6 +16,10 @@ in
     enable = mkBoolOpt false "Enable syncthing";
   };
   config = mkIf cfg.enable {
+    sops.secrets = {
+      "syncthing/key" = { };
+      "syncthing/cert" = { };
+    };
     services.syncthing = {
       enable = true;
       key = config.sops.secrets."syncthing/key".path;

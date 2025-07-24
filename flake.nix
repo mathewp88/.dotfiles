@@ -113,7 +113,7 @@
       # Issue with snowfall, stylix (in home) fails eval as NixOS doesn't link it
       # This will need to be added to any system not using stylix
       homes.users."mathai@hermes".modules = with inputs; [
-        stylix.homeManagerModules.stylix
+        stylix.homeModules.stylix
       ];
 
       templates = import ./templates { };

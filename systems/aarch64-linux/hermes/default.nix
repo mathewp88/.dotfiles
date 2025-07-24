@@ -24,6 +24,9 @@ with lib.${namespace};
         ];
       };
     };
+    programs = {
+      sops = enabled;
+    };
   };
 
   environment.systemPackages = with pkgs; [ vim raspberrypifw git neovim nh tmux ];

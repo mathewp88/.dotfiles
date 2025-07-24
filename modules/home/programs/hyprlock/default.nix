@@ -31,6 +31,10 @@ in
       playerctlockScript
     ];
 
+    sops.secrets = mkIf (osConfig.${namespace}.programs.sops.enable or false) {
+      "weather/api" = {};
+    };
+
     programs.hyprlock = {
       enable = true;
       settings = {

@@ -19,6 +19,7 @@ in
       config.${namespace}.programs.home-manager.extraOptions;
     home-manager = {
       useUserPackages = true;
+      useGlobalPkgs = true;
     };
   };
 }

@@ -12,6 +12,9 @@ with lib.${namespace};
     bundles = {
       shell = enabled;
     };
+    programs = {
+      sops = enabled;
+    };
   };
 
   # DO NOT MODIFY VALUE
