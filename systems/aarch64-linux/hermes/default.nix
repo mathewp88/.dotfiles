@@ -35,7 +35,6 @@ with lib.${namespace};
     };
     services = {
       avahi = enabled;
-      cloudflared = enabled;
       immich = enabled;
     };
   };
