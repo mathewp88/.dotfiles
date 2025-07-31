@@ -37,9 +37,10 @@ with lib.${namespace};
     };
 
     services = {
-      avahi = enabled;
+      # avahi = enabled;
       docker = enabled;
       keyd = enabled;
+      netbird = enabled;
       printing = enabled;
     };
 

@@ -25,6 +25,9 @@ in
       rootless = {
         enable = true;
         setSocketVariable = true;
+        daemon.settings = {
+          "dns" = [ "8.8.8.8" "1.1.1.1" ];
+        };
       };
     };
     hardware.nvidia-container-toolkit.enable = builtins.any (driver: driver == "nvidia") config.services.xserver.videoDrivers;
