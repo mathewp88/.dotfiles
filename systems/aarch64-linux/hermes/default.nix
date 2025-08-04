@@ -36,6 +36,7 @@ with lib.${namespace};
     services = {
       avahi = enabled;
       immich = enabled;
+      netbird = enabled;
     };
   };
 

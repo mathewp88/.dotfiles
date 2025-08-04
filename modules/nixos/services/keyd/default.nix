@@ -28,7 +28,6 @@ in
             main = {
               capslock = "overload(control, esc)";
             };
-            otherlayer = { };
           };
           extraConfig = ''
             # put here any extra-config, e.g. you can copy/paste here directly a configuration, just remove the ids part

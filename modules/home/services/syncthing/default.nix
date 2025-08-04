@@ -38,11 +38,19 @@ in
             id = "ZXNAFHS-2A5YFPF-BJHK4NT-S25VLEA-X7VLZYR-LMDRQHD-XJKAM23-ADG6KAQ";
             name = "phone";
           };
+          "hermes" = {
+            id = "RLWB6TG-YIA7D44-J7V6T26-XRG3JBG-CAZLEFO-M6R6ETB-YZRYPVA-WNELPQ6";
+            name = "hermes";
+          };
+          "ares" = {
+            id = "GQKWU6J-FICDM7Y-A7RZNDM-CAF2WL6-2Y6MAKA-JDAJOW3-PIVFMC5-G6HSQAK";
+            name = "ares";
+          };
         };
         folders = {
           "KeePass" = {
             path = "/home/mathai/M/KeePass";
-            devices = [ "phone" ];
+            devices = [ "phone" "ares" "hermes" ];
             versioning = {
               type = "simple";
               params = {

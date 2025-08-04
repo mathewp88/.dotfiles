@@ -15,6 +15,9 @@ with lib.${namespace};
     programs = {
       sops = enabled;
     };
+    services = {
+      syncthing = enabled;
+    };
   };
 
   # DO NOT MODIFY VALUE
