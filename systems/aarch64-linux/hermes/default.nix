@@ -35,6 +35,7 @@ with lib.${namespace};
     };
     services = {
       avahi = enabled;
+      calibre-web = enabled;
       immich = enabled;
       netbird = enabled;
     };
