@@ -40,8 +40,5 @@ alias rebuild='nh os switch ~/.dotfiles/'
 alias clean='nh clean all --keep=5'
 alias rm='trash'
 
-# Shell integrations
-eval "$(fzf --zsh)"
-
 # Remove Logging for direnv
 export DIRENV_LOG_FORMAT=""

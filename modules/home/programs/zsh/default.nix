@@ -22,7 +22,6 @@ in
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       initContent = lib.mkBefore ''
-        source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
         ${builtins.readFile ./.zshrc}
       '';
     };
