@@ -44,6 +44,7 @@ zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<-
 alias ls='eza'
 alias la='eza -a'
 alias cat='bat'
+alias man='batman'
 alias c='clear'
 alias e='exit'
 alias update='nix flake update --flake ~/.dotfiles'
