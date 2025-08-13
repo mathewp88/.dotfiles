@@ -22,7 +22,6 @@ in
       coreutils
       gcc
       killall
-      tldr
       wget
       ncdu
       duf
