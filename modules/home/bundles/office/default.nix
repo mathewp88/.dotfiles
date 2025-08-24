@@ -17,7 +17,7 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      calibre
+      koreader
       helvetica-neue-lt-std
       libreoffice
       obsidian

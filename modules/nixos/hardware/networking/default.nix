@@ -18,7 +18,7 @@ in
     networking = {
       networkmanager.enable = true;
     };
-    # Enable systemd-resolved for services like netbird, etc.
+    # Enable systemd-resolved for services like tailscale, etc.
     services.resolved = {
       enable = true;
       dnssec = "true";

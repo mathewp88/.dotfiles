@@ -61,6 +61,7 @@
       url = "github:yazi-rs/plugins";
       flake = false;
     };
+
   };
 
   outputs = inputs:
