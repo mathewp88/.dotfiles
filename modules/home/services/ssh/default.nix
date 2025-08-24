@@ -1,15 +1,7 @@
-{ options
-, config
-, lib
-, pkgs
-, inputs
-, namespace
-, ...
-}:
+{ options, config, lib, pkgs, inputs, namespace, ... }:
 with lib;
 with lib.${namespace};
-let
-  cfg = config.${namespace}.services.ssh;
+let cfg = config.${namespace}.services.ssh;
 in
 {
   options.${namespace}.services.ssh = with types; {

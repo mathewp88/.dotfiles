@@ -40,7 +40,7 @@ with lib.${namespace};
       avahi = enabled;
       docker = enabled;
       keyd = enabled;
-      netbird = enabled;
+      tailscale = enabled;
       printing = enabled;
     };
 

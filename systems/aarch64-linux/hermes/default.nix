@@ -37,7 +37,7 @@ with lib.${namespace};
       avahi = enabled;
       calibre-web = enabled;
       immich = enabled;
-      netbird = enabled;
+      tailscale = enabled;
     };
   };
 
