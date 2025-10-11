@@ -12,7 +12,11 @@ in
     environment.systemPackages = with pkgs; [ xorg.xhost ];
     virtualisation.docker = {
       enable = true;
-      storageDriver = mkIf (config.${namespace}.hardware.btrfs.enable) "btrfs";
+      storageDriver =
+        if (config.${namespace}.hardware.btrfs.enable) then
+          "btrfs"
+        else
+          "overlay2";
       rootless = {
         enable = true;
         setSocketVariable = true;
