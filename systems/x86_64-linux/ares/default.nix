@@ -1,25 +1,16 @@
 { pkgs, lib, namespace, ... }:
 with lib;
-with lib.${namespace};
-{
-  imports = [
-    ./hardware.nix
-  ];
+with lib.${namespace}; {
+  imports = [ ./hardware.nix ];
 
   networking.hostName = "ares";
 
   olympus = {
-    bundles = {
-      common = enabled;
-    };
+    bundles = { common = enabled; };
     config = {
       user = {
         name = "mathai";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-          "dialout"
-        ];
+        extraGroups = [ "networkmanager" "wheel" "dialout" ];
       };
     };
     desktop.hyprland = enabled;
@@ -40,7 +31,7 @@ with lib.${namespace};
       avahi = enabled;
       docker = enabled;
       keyd = enabled;
-      tailscale = enabled;
+      # tailscale = enabled;
       printing = enabled;
     };
 
