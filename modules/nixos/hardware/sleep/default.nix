@@ -1,14 +1,7 @@
-{ options
-, config
-, lib
-, pkgs
-, namespace
-, ...
-}:
+{ options, config, lib, pkgs, namespace, ... }:
 with lib;
 with lib.${namespace};
-let
-  cfg = config.${namespace}.hardware.sleep;
+let cfg = config.${namespace}.hardware.sleep;
 in
 {
   options.${namespace}.hardware.sleep = with types; {
@@ -21,10 +14,10 @@ in
       acpid.enable = true;
 
       # Extra config options for systemd-logind.
-      logind = {
-        powerKey = "suspend";
-        lidSwitch = "hibernate";
-        lidSwitchExternalPower = "suspend";
+      logind.settings.Login = {
+        HandlePowerKey = "suspend";
+        HandleLidSwitch = "hibernate";
+        HandleLidSwitchExternalPower = "suspend";
       };
 
       # Enable Upower, a DBus service that provides power management support to applications.
