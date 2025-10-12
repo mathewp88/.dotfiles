@@ -11,16 +11,23 @@ in
   config = mkIf cfg.enable {
     programs.ssh = {
       enable = true;
-
-      ## FOR SAFETY, DO NOT OVERRIDE !! ##
-      forwardAgent = lib.mkForce false;
-      hashKnownHosts = lib.mkForce true;
-
-      addKeysToAgent = "yes";
-      serverAliveInterval = 60;
-      serverAliveCountMax = 10;
-
+      enableDefaultConfig = false;
       matchBlocks = {
+        "*" = {
+          ## FOR SAFETY, DO NOT OVERRIDE !! ##
+          forwardAgent = lib.mkForce false;
+          hashKnownHosts = lib.mkForce true;
+
+          addKeysToAgent = "yes";
+          serverAliveInterval = 60;
+          serverAliveCountMax = 10;
+          compression = false;
+          userKnownHostsFile = "~/.ssh/known_hosts";
+          controlMaster = "auto";
+          controlPath = "~/.ssh/master-%r@%n:%p";
+          controlPersist = "no";
+        };
+
         "github.com" = {
           user = "git";
           hostname = "github.com";
