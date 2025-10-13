@@ -1,14 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  namespace,
-  ...
-}:
+{ config, lib, pkgs, namespace, ... }:
 with lib;
 with lib.${namespace};
-let
-  cfg = config.${namespace}.system.fonts;
+let cfg = config.${namespace}.system.fonts;
 in
 {
   options.${namespace}.system.fonts = {

@@ -1,13 +1,7 @@
-{ options
-, config
-, lib
-, namespace
-, ...
-}:
+{ config, lib, namespace, ... }:
 with lib;
 with lib.${namespace};
-let
-  cfg = config.${namespace}.hardware.networking;
+let cfg = config.${namespace}.hardware.networking;
 in
 {
   options.${namespace}.hardware.networking = with types; {
@@ -15,9 +9,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    networking = {
-      networkmanager.enable = true;
-    };
+    networking = { networkmanager.enable = true; };
     # Enable systemd-resolved for services like tailscale, etc.
     services.resolved = {
       enable = true;

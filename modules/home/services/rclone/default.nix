@@ -22,8 +22,8 @@ in
     systemd.user.timers."keepass-backup" = {
       Install.WantedBy = [ "timers.target" ];
       Timer = {
-        OnBootSec = "1h";
-        OnUnitActiveSec = "1h";
+        OnBootSec = "12h";
+        OnUnitActiveSec = "12h";
         Unit = "keepass-backup";
       };
     };

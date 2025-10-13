@@ -1,4 +1,4 @@
-{ options, config, lib, pkgs, namespace, ... }:
+{ config, lib, namespace, ... }:
 with lib;
 with lib.${namespace};
 let cfg = config.${namespace}.services.tailscale;
@@ -12,7 +12,6 @@ in
     sops.secrets = { tailscale = { }; };
     services.tailscale = {
       enable = true;
-      openFirewall = true;
       authKeyFile = config.sops.secrets.tailscale.path;
     };
   };
