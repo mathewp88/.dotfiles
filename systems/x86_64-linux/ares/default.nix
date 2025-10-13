@@ -31,7 +31,7 @@ with lib.${namespace}; {
       avahi = enabled;
       docker = enabled;
       keyd = enabled;
-      # tailscale = enabled;
+      tailscale = enabled;
       printing = enabled;
     };
 

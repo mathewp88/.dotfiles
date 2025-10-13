@@ -1,12 +1,6 @@
-{ config
-, lib
-, osConfig
-, namespace
-, ...
-}:
+{ config, lib, osConfig, namespace, ... }:
 with lib;
-with lib.${namespace};
-{
+with lib.${namespace}; {
   snowfallorg.user.enable = true;
   olympus = {
     bundles = {
@@ -18,11 +12,13 @@ with lib.${namespace};
     };
     programs = {
       keepassxc = enabled;
+      mangohud = enabled;
       spotify = enabled;
       yazi = enabled;
       zathura = enabled;
     };
     services = {
+      ludusavi = enabled;
       rclone = enabled;
       syncthing = enabled;
     };

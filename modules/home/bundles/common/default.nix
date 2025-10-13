@@ -14,8 +14,6 @@ in
 
       openvpn
       keepassxc
-      aria
-      tailscale
 
       # Video/Audio
       vlc
