@@ -10,7 +10,7 @@ in
 
   config = mkIf cfg.enable {
 
-    environment.systemPackages = with pkgs; [ wget curl git fastfetch aria ];
+    environment.systemPackages = with pkgs; [ wget curl git fastfetch aria2 ];
 
     services = {
       udisks2.enable = true; # Required for e-reader connections to calibre
