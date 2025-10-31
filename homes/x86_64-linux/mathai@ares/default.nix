@@ -19,6 +19,7 @@ with lib.${namespace}; {
     };
     services = {
       ludusavi = enabled;
+      kdeconnect = enabled;
       rclone = enabled;
       syncthing = enabled;
     };
