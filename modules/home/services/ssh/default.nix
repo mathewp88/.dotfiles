@@ -1,7 +1,13 @@
-{ options, config, lib, pkgs, inputs, namespace, ... }:
+{
+  config,
+  lib,
+  namespace,
+  ...
+}:
 with lib;
 with lib.${namespace};
-let cfg = config.${namespace}.services.ssh;
+let
+  cfg = config.${namespace}.services.ssh;
 in
 {
   options.${namespace}.services.ssh = with types; {
@@ -26,6 +32,11 @@ in
           controlMaster = "auto";
           controlPath = "~/.ssh/master-%r@%n:%p";
           controlPersist = "no";
+
+          setEnv = {
+            TERM = "term-256color";
+          };
+
         };
 
         "github.com" = {
