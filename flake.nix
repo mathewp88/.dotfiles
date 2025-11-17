@@ -94,7 +94,9 @@
         permittedInsecurePackages = [ ];
       };
 
-      overlays = with inputs; [ ];
+      overlays = with inputs; [
+        firefox-addons.overlays.default
+      ];
 
       systems.modules.nixos = with inputs; [
         lanzaboote.nixosModules.lanzaboote
