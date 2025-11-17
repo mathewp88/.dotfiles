@@ -171,7 +171,6 @@ in
             ublock-origin
             sponsorblock
             darkreader
-            youtube-shorts-block
             zotero-connector
             keepassxc-browser
             multi-account-containers
@@ -205,6 +204,17 @@ in
                   removal = 900000;
                 };
               };
+            };
+
+            "{3c6bf0cc-3ae2-42fb-9993-0d33104fdcaf}".settings = {
+              player_playback_speed = 2;
+              remove_home_page_shorts = true;
+              theme = "black";
+              ads = "block_all";
+              hide_banner_ads = true;
+              hide_sponsored_videos_home = true;
+              mark_watched_videos = true;
+              track_watched_videos = true;
             };
           };
         };
