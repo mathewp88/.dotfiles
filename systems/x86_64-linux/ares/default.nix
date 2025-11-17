@@ -1,6 +1,7 @@
 {
   lib,
   namespace,
+  pkgs,
   ...
 }:
 with lib;
@@ -55,6 +56,7 @@ with lib.${namespace};
     };
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   # DO NOT MODIFY VALUE
   system.stateVersion = "24.05";
 }
