@@ -167,7 +167,7 @@ in
 
         extensions = {
           force = true;
-          packages = with inputs.firefox-addons.packages."${pkgs.stdenv.hostPlatform.system}"; [
+          packages = with pkgs.firefox-addons; [
             ublock-origin
             sponsorblock
             darkreader
@@ -176,6 +176,7 @@ in
             keepassxc-browser
             multi-account-containers
             temporary-containers
+            improved-tube
           ];
           settings = {
             "uBlock0@raymondhill.net".settings = {
@@ -226,6 +227,9 @@ in
           };
           "keepassxc-browser@keepassxc.org" = {
             default_area = "navbar";
+          };
+          "{3c6bf0cc-3ae2-42fb-9993-0d33104fdcaf}" = {
+            default_area = "menupanel";
           };
         };
       };
