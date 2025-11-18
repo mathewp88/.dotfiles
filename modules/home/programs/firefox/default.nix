@@ -215,6 +215,9 @@ in
               hide_sponsored_videos_home = true;
               mark_watched_videos = true;
               track_watched_videos = true;
+              player_subtitles = "enabled";
+              subtitles_language = "en";
+              auto_generate = true;
             };
           };
         };
