@@ -22,7 +22,7 @@ in
       curl
       git
       fastfetch
-      aria2
+      p7zip-rar
     ];
 
     services = {

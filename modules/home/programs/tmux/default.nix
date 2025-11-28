@@ -20,7 +20,7 @@ in
       enable = true;
       mouse = true;
       keyMode = "vi";
-      prefix = "C-a";
+      prefix = "C-Space";
       sensibleOnTop = true;
       plugins = with pkgs; [
         tmuxPlugins.vim-tmux-navigator

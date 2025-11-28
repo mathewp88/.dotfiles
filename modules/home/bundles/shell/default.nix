@@ -31,12 +31,12 @@ in
       tealdeer
       ripgrep
       fd
+      aria2
 
       # archives
       zip
       xz
       unzip
-      p7zip-rar
 
       # system tools
       sysstat

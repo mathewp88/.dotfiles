@@ -22,7 +22,6 @@ in
       curl
       git
       fastfetch
-      aria2
     ];
 
     services = {

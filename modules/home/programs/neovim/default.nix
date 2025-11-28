@@ -43,7 +43,9 @@ in
         curl
         fd
         wget
+        imagemagick
       ];
+      extraLuaPackages = ps: [ ps.magick ];
       # Ensure no init.lua is made
       extraConfig = "";
       extraLuaConfig = "";
