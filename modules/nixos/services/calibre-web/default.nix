@@ -18,6 +18,7 @@ in
     sops.secrets = {
       "hardcover-api" = { };
     };
+
     virtualisation.oci-containers.containers = {
       calibre-web-automated = {
         pull = "newer";
@@ -36,14 +37,14 @@ in
           "/data/calibre/library:/calibre-library"
           "/data/calibre/plugins:/config/.config/calibre/plugins"
         ];
-        ports = [ "8083:8083" ];
+        ports = [ "0.0.0.0:8083:8083" ];
       };
 
       calibre-web-automated-book-downloader = {
         pull = "newer";
         image = "ghcr.io/calibrain/calibre-web-automated-book-downloader:latest";
         autoStart = true;
-        ports = [ "8084:8084" ];
+        ports = [ "0.0.0.0:8084:8084" ];
         environment = {
           FLASK_PORT = "8084";
           LOG_LEVEL = "info";
