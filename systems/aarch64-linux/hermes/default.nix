@@ -47,6 +47,7 @@ with lib.${namespace};
       avahi = enabled;
       calibre-web = enabled;
       immich = enabled;
+      nginx = enabled;
       tailscale = enabled;
     };
   };
