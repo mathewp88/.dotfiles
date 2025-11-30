@@ -18,6 +18,7 @@ in
     sops.secrets = {
       "immich" = { };
     };
+
     services.immich = {
       enable = true;
 
