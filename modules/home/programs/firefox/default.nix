@@ -207,6 +207,7 @@ in
             };
 
             "{3c6bf0cc-3ae2-42fb-9993-0d33104fdcaf}".settings = {
+              player_forced_playback_speed = true;
               player_playback_speed = 2;
               remove_home_page_shorts = true;
               theme = "black";
