@@ -16,7 +16,6 @@ with lib.${namespace};
       sops = enabled;
     };
     services = {
-      syncthing = enabled;
     };
   };
 
