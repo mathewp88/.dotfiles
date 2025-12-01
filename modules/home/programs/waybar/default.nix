@@ -94,7 +94,7 @@ in
       }
 
       #workspaces button.urgent {
-          background-color: @urgent;
+          color: @urgent;
       }
 
       #mode {
