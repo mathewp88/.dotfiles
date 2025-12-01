@@ -48,6 +48,7 @@ with lib.${namespace};
       calibre-web = enabled;
       immich = enabled;
       glance = enabled;
+      nextcloud = enabled;
       nginx = enabled;
       tailscale = enabled;
       vaultwarden = enabled;
