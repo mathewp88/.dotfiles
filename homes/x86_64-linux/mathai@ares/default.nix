@@ -28,7 +28,6 @@ with lib.${namespace};
       ludusavi = enabled;
       kdeconnect = enabled;
       rclone = enabled;
-      syncthing = enabled;
     };
   };
 
