@@ -19,7 +19,6 @@ in
     home.packages = with pkgs; [
 
       openvpn
-      keepassxc
 
       # Video/Audio
       vlc
