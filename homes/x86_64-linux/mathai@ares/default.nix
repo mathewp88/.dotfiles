@@ -18,7 +18,6 @@ with lib.${namespace};
     };
     programs = {
       firefox = enabled;
-      keepassxc = enabled;
       mangohud = enabled;
       spotify = enabled;
       yazi = enabled;

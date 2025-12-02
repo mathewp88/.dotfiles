@@ -50,7 +50,6 @@ in
           "swaync"
           "nm-applet"
           "clipse -listen"
-          "[workspace special:magic silent] keepassxc"
         ];
 
         env = [
@@ -64,8 +63,6 @@ in
         windowrule = [
           # "opacity 0.95 override 0.95 override 0.95 override, class:kitty"
           # "opacity 0.95 override 0.95 override 0.95 override, class:com.mitchellh.ghostty"
-
-          "float, class:org.keepassxc.KeePassXC"
 
           "float, class:(com.save.clipse)"
           "size 622 652, class:(com.save.clipse)"
