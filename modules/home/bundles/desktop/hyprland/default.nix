@@ -18,11 +18,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       wl-clipboard
-      clipse
       brightnessctl
-      swww
-      swayosd
-      networkmanagerapplet
       sway-contrib.grimshot
     ];
 
