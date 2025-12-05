@@ -91,8 +91,8 @@ in
           ", XF86InputLowerVolume, exec, swayosd-client --input-volume lower"
 
           # Brightness
-          ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise && brightnessctl -m | cut -d ',' -f3 > ~/.config/lock/bright"
-          ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower && brightnessctl -m | cut -d ',' -f3 > ~/.config/lock/bright"
+          ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
+          ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
         ];
 
         bindm = [

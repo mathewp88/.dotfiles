@@ -27,9 +27,14 @@ in
 
     olympus.desktop.hyprland = {
       keybinds = enabled;
+      monitors = enabled;
     };
 
     services.playerctld.enable = true;
+    services.swayosd.enable = true;
+    services.swww.enable = true;
+    services.clipse.enable = true;
+    services.network-manager-applet.enable = true;
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -44,12 +49,7 @@ in
         input.numlock_by_default = true;
 
         exec-once = [
-          "swww-daemon"
-          "swayosd-server"
           "waybar"
-          "swaync"
-          "nm-applet"
-          "clipse -listen"
         ];
 
         env = [
@@ -73,6 +73,15 @@ in
         general.gaps_in = 3;
         general."col.active_border" = lib.mkForce "rgb(${stylixColors.base03})";
         general."col.inactive_border" = lib.mkForce "rgb(${stylixColors.base02})";
+
+        animation = [
+          "windows,1,4,default"
+          "windowsOut,1,4,default"
+          "border,1,2,default"
+          "fade,1,0.5,default"
+          "fadeDim,1,0.5,default"
+          "workspaces,1,3,default"
+        ];
 
         input.kb_options = "ctrl:nocaps";
         decoration.blur.enabled = true;

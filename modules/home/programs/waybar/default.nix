@@ -18,9 +18,8 @@ in
     enable = mkBoolOpt false "Enable waybar";
   };
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      waybar
-    ];
+
+    programs.waybar.enable = true;
 
     home.file.".config/waybar/config".source = ./config.jsonc;
 
