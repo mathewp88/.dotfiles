@@ -12,6 +12,7 @@ let
   cfg = config.${namespace}.programs.waybar;
   stylixEnabled = config.${namespace}.programs.stylix.enable or false;
   stylixColors = if stylixEnabled then osConfig.lib.stylix.colors else null;
+  confScript = (pkgs.writeShellScriptBin "conference" (builtins.readFile ./conf.sh));
 in
 {
   options.${namespace}.programs.waybar = with types; {
@@ -20,6 +21,8 @@ in
   config = mkIf cfg.enable {
 
     programs.waybar.enable = true;
+
+    home.packages = [ confScript ];
 
     home.file.".config/waybar/config".source = ./config.jsonc;
 
@@ -112,6 +115,7 @@ in
       #pulseaudio,
       #wireplumber,
       #custom-media,
+      #custom-conf-countdown,
       #tray,
       #mode,
       #idle_inhibitor,
@@ -369,6 +373,23 @@ in
           color: @color9;
           border: none;
           text-shadow: 0px 0px 2px alpha(@background, .5);
+      }
+
+      #custom-conf-countdown.normal {
+        color: @foreground;
+      }
+
+      #custom-conf-countdown.soon {
+        color: @color9;
+      }
+
+      #custom-conf-countdown.urgent {
+        color: @urgent;
+        animation: blink 1s ease-in-out infinite;
+      }
+
+      @keyframes blink {
+        50% { opacity: 0.5; }
       }
     '';
   };
