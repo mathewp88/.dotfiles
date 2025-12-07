@@ -48,7 +48,7 @@ in
         e = "exit";
         update = "nix flake update --flake ~/.dotfiles";
         rebuild = "nh os switch ~/.dotfiles/";
-        clean = "nh clean all";
+        clean = "nh clean all -k 5";
         rm = "trash";
       };
       initContent = lib.mkBefore ''
