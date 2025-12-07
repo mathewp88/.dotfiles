@@ -71,6 +71,7 @@ in
 
         general.gaps_out = 6;
         general.gaps_in = 3;
+        general.border_size = 2;
         general."col.active_border" = lib.mkForce "rgb(${stylixColors.base03})";
         general."col.inactive_border" = lib.mkForce "rgb(${stylixColors.base02})";
 
