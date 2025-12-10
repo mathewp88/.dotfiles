@@ -48,7 +48,7 @@ in
 
         "blazer" = {
           user = "mathai.mathew";
-          hostname = "10.2.36.164";
+          hostname = "10.2.36.177";
           identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
           identitiesOnly = true;
         };
@@ -63,6 +63,13 @@ in
         "ada" = {
           user = "mathai.mathew";
           hostname = "10.4.24.24";
+          identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
+          identitiesOnly = true;
+        };
+
+        "void" = {
+          user = "mathai.mathew";
+          hostname = "10.2.36.213";
           identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
           identitiesOnly = true;
         };
