@@ -47,6 +47,7 @@ with lib.${namespace};
       avahi = enabled;
       calibre-web = enabled;
       immich = enabled;
+      jellyfin = enabled;
       glance = enabled;
       nextcloud = enabled;
       nginx = enabled;

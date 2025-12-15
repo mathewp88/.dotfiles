@@ -115,6 +115,11 @@ in
                         icon = "si:calibreweb";
                       }
                       {
+                        title = "Jellyfin";
+                        url = "https://jellyfin.mathai.duckdns.org/";
+                        icon = "si:jellyfin";
+                      }
+                      {
                         title = "Nextcloud";
                         url = "https://cloud.mathai.duckdns.org/";
                         icon = "si:nextcloud";
