@@ -34,6 +34,7 @@ in
         kitty = enabled;
         sops = enabled;
         stylix = enabled;
+        zed = enabled;
       };
       services = {
         ssh = enabled;

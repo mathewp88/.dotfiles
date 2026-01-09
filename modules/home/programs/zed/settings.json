@@ -1,0 +1,30 @@
+{
+  "tabs": {
+    "file_icons": true
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "agent": {
+    "dock": "right",
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
+    },
+    "model_parameters": []
+  },
+  "relative_line_numbers": "enabled",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "ui_font_weight": 400.0,
+  "buffer_line_height": "comfortable",
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "icon_theme": "Colored Zed Icons Theme Dark"
+}
