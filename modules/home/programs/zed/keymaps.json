@@ -1,0 +1,52 @@
+[
+  {
+    "context": "Editor && (vim_mode == normal)",
+
+    "bindings": {
+      "shift-k": "editor::Hover",
+      "space l f": "editor::Format",
+      "space d": "diagnostics::Deploy",
+      "space f f": [
+        "task::Spawn",
+        { "task_name": "file_finder", "reveal_target": "center" }
+      ],
+      "space f g": [
+        "task::Spawn",
+        { "task_name": "fulltext_search", "reveal_target": "center" }
+      ],
+      "space o": "tab_switcher::Toggle",
+      "space t": "workspace::NewCenterTerminal",
+      "; ;": ["workspace::SendKeystrokes", "ctrl-tab enter"],
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "LazyGit", "reveal_target": "center" }
+      ]
+    }
+  },
+  {
+    "context": "vim_mode == normal || menu",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "space a": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "escape": "project_panel::ToggleFocus",
+      "enter": "project_panel::Open",
+      "A": "project_panel::NewDirectory",
+      "o": "project_panel::NewDirectory",
+      "a": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d d": "project_panel::Delete",
+      "l": "project_panel::ExpandSelectedEntry",
+      "h": "project_panel::CollapseSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious"
+    }
+  }
+]
