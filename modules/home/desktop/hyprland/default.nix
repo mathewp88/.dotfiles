@@ -63,9 +63,9 @@ in
           # "opacity 0.95 override 0.95 override 0.95 override, class:kitty"
           # "opacity 0.95 override 0.95 override 0.95 override, class:com.mitchellh.ghostty"
 
-          "float, class:(com.save.clipse)"
-          "size 622 652, class:(com.save.clipse)"
-          "stayfocused, class:(com.save.clipse)"
+          "float on, match:class com.save.clipse"
+          "size 622 652, match:class com.save.clipse"
+          "stay_focused on, match:class com.save.clipse"
         ];
 
         general.gaps_out = 6;

@@ -22,7 +22,6 @@ in
       nix-index
       nix-output-monitor
       nix-prefetch-git
-      nixfmt-rfc-style
     ];
     nix = {
       package = pkgs.nixVersions.latest;
