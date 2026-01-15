@@ -2,11 +2,12 @@
   config,
   pkgs,
   lib,
+  libEx,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.programs.neovim;
   linker = lib.fileContents "${pkgs.binutils}/nix-support/dynamic-linker";

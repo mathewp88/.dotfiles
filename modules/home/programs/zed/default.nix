@@ -2,11 +2,12 @@
   config,
   pkgs,
   lib,
+  libEx,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.programs.zed;
 in
@@ -34,6 +35,7 @@ in
         bat
         fd
         nixd
+        nil
         lazygit
         television
       ];

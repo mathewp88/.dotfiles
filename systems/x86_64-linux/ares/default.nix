@@ -43,7 +43,7 @@ with lib.${namespace};
       docker = enabled;
       keyd = enabled;
       tailscale = enabled;
-      printing = enabled;
+      # printing = enabled;
     };
 
     system = {
@@ -57,6 +57,7 @@ with lib.${namespace};
   };
 
   # boot.kernelPackages = pkgs.linuxPackages_latest;
+  nixpkgs.config.allowUnfree = true;
   # DO NOT MODIFY VALUE
   system.stateVersion = "24.05";
 }

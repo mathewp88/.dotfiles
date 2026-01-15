@@ -2,10 +2,11 @@
   config,
   lib,
   namespace,
+  libEx,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.services.hypridle;
 in

@@ -26,6 +26,7 @@ in
       programs.zsh = enabled;
       users.users.${cfg.name} = {
         isNormalUser = true;
+        createHome = true;
         home = "/home/${cfg.name}";
         group = "users";
         shell = pkgs.zsh;

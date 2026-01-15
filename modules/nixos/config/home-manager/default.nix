@@ -16,8 +16,6 @@ in
 
   # Auto Import and setup home-manager
   config = {
-    snowfallorg.users.${config.${namespace}.config.user.name}.home.config =
-      config.${namespace}.programs.home-manager.extraOptions;
     home-manager = {
       useUserPackages = true;
       useGlobalPkgs = true;

@@ -48,9 +48,9 @@ in
         log-lines = 50;
       };
       # flake-utils-plus
-      generateRegistryFromInputs = true;
-      generateNixPathFromInputs = true;
-      linkInputs = true;
+      # generateRegistryFromInputs = true;
+      # generateNixPathFromInputs = true;
+      # linkInputs = true;
     };
 
     # System AutoUpgrade

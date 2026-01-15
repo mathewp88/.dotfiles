@@ -1,14 +1,25 @@
 {
   config,
   lib,
+  libEx,
   namespace,
+  inputs,
   pkgs,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.programs.firefox;
+
+  firefoxAddonsPkgs =
+    import inputs.nixpkgs {
+      system = pkgs.stdenv.hostPlatform.system;
+      config.allowUnfree = true;
+      overlays = [
+        inputs.firefox-addons.overlays.default
+      ];
+    };
 in
 {
   options.${namespace}.programs.firefox = {
@@ -166,7 +177,7 @@ in
 
         extensions = {
           force = true;
-          packages = with pkgs.firefox-addons; [
+          packages = with firefoxAddonsPkgs.firefox-addons; [
             ublock-origin
             sponsorblock
             darkreader

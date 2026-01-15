@@ -1,13 +1,14 @@
 {
   config,
   lib,
+  libEx,
   pkgs,
   inputs,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.programs.spotify;
 in

@@ -1,11 +1,12 @@
 {
   config,
   lib,
+  libEx,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.desktop.hyprland.monitors;
 in

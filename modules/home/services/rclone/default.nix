@@ -2,11 +2,12 @@
   config,
   lib,
   pkgs,
+  libEx,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.services.rclone;
 in

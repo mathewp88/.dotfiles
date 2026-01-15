@@ -1,5 +1,5 @@
 {
-  description = "Olympus Nix Config";
+  description = "Olympus NixOS flake";
 
   inputs = {
     # Nixpkgs from unstable
@@ -41,12 +41,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Organizing Nix Conf
-    snowfall-lib = {
-      url = "github:snowfallorg/lib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Spotify w/ modifications
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -67,58 +61,49 @@
       flake = false;
     };
 
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs =
-    inputs:
-    let
-      lib = inputs.snowfall-lib.mkLib {
-        inherit inputs;
-        src = ./.;
+  outputs = inputs @ { flake-parts, nixpkgs, home-manager, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
 
-        # Metadata
-        snowfall = {
-          namespace = "olympus";
-          meta = {
-            name = "olympus";
-            title = "Olympus";
-          };
+      systems = [ "x86_64-linux" "aarch64-linux" ];
+
+      flake = {
+
+        namespace = "olympus";
+
+        nixosInputs = with inputs; [
+          lanzaboote.nixosModules.lanzaboote
+          stylix.nixosModules.stylix
+          sops-nix.nixosModules.sops
+        ];
+
+          homeInputs = with inputs; [
+            sops-nix.homeManagerModules.sops
+            spicetify-nix.homeManagerModules.default
+          ];
+
+        lib = import ./lib {
+          nixpkgs = nixpkgs;
+          namespace = inputs.self.namespace;
         };
+
+        nixosConfigurations = 
+          import ./lib/mkHosts.nix {
+            inherit nixpkgs home-manager inputs;
+          };
+
+        nixosModules =
+          import ./lib/mkNixosModules.nix {
+            lib = nixpkgs.lib;
+          };
+
+        homeModules =
+          import ./lib/mkHomeModules.nix {
+            lib = nixpkgs.lib;
+          };
       };
-    in
-    lib.mkFlake {
-      inherit inputs;
-      src = ./.;
-
-      channels-config = {
-        allowUnfree = true;
-        permittedInsecurePackages = [ ];
-      };
-
-      overlays = with inputs; [
-        firefox-addons.overlays.default
-      ];
-
-      systems.modules.nixos = with inputs; [
-        lanzaboote.nixosModules.lanzaboote
-        sops-nix.nixosModules.sops
-      ];
-
-      homes.modules = with inputs; [
-        sops-nix.homeManagerModules.sops
-        spicetify-nix.homeManagerModules.default
-      ];
-
-      systems.hosts.ares.modules = with inputs; [
-        # Same hardware as the victus
-        nixos-hardware.nixosModules.omen-16-n0280nd
-        stylix.nixosModules.stylix
-      ];
-
-      systems.hosts.hermes.modules = with inputs; [
-        nixos-hardware.nixosModules.raspberry-pi-4
-      ];
-
-      templates = import ./templates { };
     };
 }
