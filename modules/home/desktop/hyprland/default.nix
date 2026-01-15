@@ -12,6 +12,7 @@ let
   cfg = config.${namespace}.desktop.hyprland;
   stylixEnabled = config.${namespace}.programs.stylix.enable or false;
   stylixColors = if stylixEnabled then osConfig.lib.stylix.colors else null;
+  stylixWallpaper = if stylixEnabled then osConfig.stylix.image else null;
   terminalChoice =
     if config.${namespace}.programs.kitty.enable then
       "kitty"
@@ -32,14 +33,21 @@ in
 
     services.playerctld.enable = true;
     services.swayosd.enable = true;
-    services.swww.enable = true;
     services.clipse.enable = true;
     services.network-manager-applet.enable = true;
+
+    services.hyprpaper = {
+      enable = true;
+      settings = {
+        splash = false;
+        preload = [ stylixWallpaper ];
+        wallpaper = [ stylixWallpaper ];
+      };
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      # systemd.enable = false; # Don't use with USWM
       settings = {
         "$terminal" = terminalChoice;
         "$browser" = "firefox";
@@ -58,12 +66,8 @@ in
           "XDG_SESSION_DESKTOP,Hyprland"
         ];
 
-        exec = lib.mkIf stylixEnabled [ "swww img ${osConfig.stylix.image}" ];
 
         windowrule = [
-          # "opacity 0.95 override 0.95 override 0.95 override, class:kitty"
-          # "opacity 0.95 override 0.95 override 0.95 override, class:com.mitchellh.ghostty"
-
           "float on, match:class com.save.clipse"
           "size 622 652, match:class com.save.clipse"
           "stay_focused on, match:class com.save.clipse"

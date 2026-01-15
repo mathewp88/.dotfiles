@@ -52,7 +52,7 @@ in
             terminal = 13;
           };
         };
-        image = ./cloud-coffee.jpg;
+        image = ./cherry.png;
         polarity = "dark";
       };
     })

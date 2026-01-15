@@ -13,6 +13,8 @@ let
   cfg = config.${namespace}.programs.waybar;
   stylixEnabled = config.${namespace}.programs.stylix.enable or false;
   stylixColors = if stylixEnabled then osConfig.lib.stylix.colors else null;
+  stylixFont   = if stylixEnabled then osConfig.stylix.fonts.sansSerif.name else "Cantarell";
+  stylixEmojiFont   = if stylixEnabled then osConfig.stylix.fonts.emoji.name else "Font Awesome 6 Free";
   confScript = (pkgs.writeShellScriptBin "conference" (builtins.readFile ./conf.sh));
 in
 {
@@ -42,7 +44,7 @@ in
 
       * {
           /* `otf-font-awesome` is required to be installed for icons */
-          font-family: Cantarell, 'Font Awesome 6 Free';
+          font-family: ${stylixFont}, '${stylixEmojiFont}';
           font-size: 14px;
           font-feature-settings: "tnum";
       }

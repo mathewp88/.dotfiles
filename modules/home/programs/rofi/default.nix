@@ -13,6 +13,7 @@ let
   cfg = config.${namespace}.programs.rofi;
   stylixEnabled = config.${namespace}.programs.stylix.enable or false;
   stylixColors = if stylixEnabled then osConfig.lib.stylix.colors else null;
+  stylixFonts  = if stylixEnabled then osConfig.stylix.fonts else null;
 in
 {
   options.${namespace}.programs.rofi = with types; {
@@ -30,7 +31,7 @@ in
 
     home.file.".config/rofi/color.rasi".text = ''
       * {
-          font: "JetBrains Mono Nerd Font 13";
+          font: "${stylixFonts.monospace.name} 13";
           background:     #${stylixColors.base00};
           background-alt: #${stylixColors.base01};
           foreground:     #${stylixColors.base05};
