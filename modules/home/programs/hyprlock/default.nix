@@ -18,6 +18,7 @@ let
   );
   stylixEnabled = config.${namespace}.programs.stylix.enable or false;
   stylixColors = if stylixEnabled then osConfig.lib.stylix.colors else null;
+  stylixFonts = if stylixEnabled then osConfig.stylix.fonts else null;
 in
 {
   options.${namespace}.programs.hyprlock = with types; {
@@ -102,7 +103,7 @@ in
             shadow_color = "rgb(0,0,0)";
             shadow_boost = 1.2;
             font_size = 150;
-            font_family = "JetBrains Mono Nerd Font Mono";
+            font_family = "${stylixFonts.sansSerif.name}";
             position = "0, -250";
             halign = "center";
             valign = "top";
@@ -117,7 +118,7 @@ in
             shadow_color = "rgb(0,0,0)";
             shadow_boost = 1.2;
             font_size = 150;
-            font_family = "JetBrains Mono Nerd Font Mono";
+            font_family = "${stylixFonts.sansSerif.name}";
             position = "0, -420";
             halign = "center";
             valign = "top";
@@ -132,7 +133,7 @@ in
             shadow_color = "rgb(0,0,0)";
             shadow_boost = 1.2;
             font_size = 14;
-            font_family = "JetBrains Mono Nerd Font Mono";
+            font_family = "${stylixFonts.sansSerif.name}";
             position = "0, -130";
             halign = "center";
             valign = "center";
@@ -144,7 +145,7 @@ in
             text = ''cmd[update:100] echo "$(playerctlock --title) $(playerctlock --status)"'';
             color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 16;
-            font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+            font_family = "${stylixFonts.sansSerif.name} ExtraBold";
             position = "0, -280";
             halign = "center";
             valign = "center";
@@ -156,7 +157,7 @@ in
             text = ''cmd[update:100] echo "$(playerctlock --length) "'';
             color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 11;
-            font_family = "JetBrains Mono Nerd Font Mono";
+            font_family = "${stylixFonts.sansSerif.name}";
             position = "-830, -310";
             halign = "right";
             valign = "center";
@@ -168,7 +169,7 @@ in
             text = ''cmd[update:100] echo "$(playerctlock --source)"'';
             color = "rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.6)";
             font_size = 10;
-            font_family = "JetBrains Mono Nerd Font Mono";
+            font_family = "${stylixFonts.sansSerif.name}";
             position = "-830, -330";
             halign = "right";
             valign = "center";
@@ -180,7 +181,7 @@ in
             text = ''cmd[update:100] echo "$(playerctlock --album)"'';
             color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 10;
-            font_family = "JetBrains Mono Nerd Font Mono";
+            font_family = "${stylixFonts.sansSerif.name}";
             position = "840, -330";
             halign = "left";
             valign = "center";
@@ -192,7 +193,7 @@ in
             text = ''cmd[update:100] echo "$(playerctlock --artist)"'';
             color = "rgba(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b}, 0.8)";
             font_size = 10;
-            font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+            font_family = "${stylixFonts.sansSerif.name} ExtraBold";
             position = "840, -310";
             halign = "left";
             valign = "center";
@@ -204,7 +205,7 @@ in
             text = ''cmd[update:1000] echo "$(weather $(cat ${config.sops.secrets."weather/api".path}))"'';
             color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 10;
-            font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+            font_family = "${stylixFonts.sansSerif.name} ExtraBold";
             position = "0, 465";
             halign = "center";
             valign = "center";
@@ -216,7 +217,7 @@ in
             text = ''cmd[update:10000] echo -e "$(infolock)"'';
             color = "rgb(${stylixColors.base05-rgb-r}, ${stylixColors.base05-rgb-g}, ${stylixColors.base05-rgb-b})";
             font_size = 12;
-            font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+            font_family = "${stylixFonts.sansSerif.name} ExtraBold";
             position = "-20, -510";
             halign = "right";
             valign = "center";
