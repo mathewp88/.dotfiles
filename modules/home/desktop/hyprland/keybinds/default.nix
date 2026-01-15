@@ -1,12 +1,13 @@
 {
   config,
   lib,
+  libEx,
   pkgs,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.desktop.hyprland.keybinds;
   powermenuScript = (pkgs.writeShellScriptBin "powermenu" (builtins.readFile ./scripts/powermenu.sh));

@@ -2,11 +2,12 @@
   osConfig,
   config,
   lib,
+  libEx,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.desktop.hyprland;
   stylixEnabled = config.${namespace}.programs.stylix.enable or false;
@@ -38,7 +39,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      systemd.enable = false; # Don't use with USWM
+      # systemd.enable = false; # Don't use with USWM
       settings = {
         "$terminal" = terminalChoice;
         "$browser" = "firefox";

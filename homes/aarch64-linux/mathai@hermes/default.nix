@@ -1,13 +1,13 @@
 {
   lib,
+  libEx,
   osConfig,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 {
-  snowfallorg.user.enable = true;
   olympus = {
     bundles = {
       shell = enabled;

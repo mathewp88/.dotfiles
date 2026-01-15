@@ -2,12 +2,13 @@
   osConfig,
   config,
   lib,
+  libEx,
   namespace,
   inputs,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.programs.sops;
 in

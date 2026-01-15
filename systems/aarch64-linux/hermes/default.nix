@@ -57,6 +57,7 @@ with lib.${namespace};
   };
 
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+  nixpkgs.config.allowUnfree = true;
   # DO NOT MODIFY VALUE
   system.stateVersion = "23.11";
 }

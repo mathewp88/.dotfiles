@@ -1,12 +1,13 @@
 {
   config,
   lib,
+  libEx,
   inputs,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.programs.yazi;
 in

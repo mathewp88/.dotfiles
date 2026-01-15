@@ -1,12 +1,14 @@
 {
   config,
   lib,
+  inputs, 
   modulesPath,
   ...
 }:
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.nixos-hardware.nixosModules.omen-16-n0280nd
   ];
 
   boot.initrd.availableKernelModules = [

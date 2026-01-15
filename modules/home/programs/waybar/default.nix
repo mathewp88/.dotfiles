@@ -2,12 +2,13 @@
   config,
   osConfig,
   lib,
+  libEx,
   pkgs,
   namespace,
   ...
 }:
 with lib;
-with lib.${namespace};
+with libEx.${namespace};
 let
   cfg = config.${namespace}.programs.waybar;
   stylixEnabled = config.${namespace}.programs.stylix.enable or false;
