@@ -18,6 +18,7 @@ in
     extraGroups = mkOpt (listOf str) [ ] "Groups for the user to be assigned.";
     extraOptions = mkOpt attrs { } (mdDoc "Extra options passed to `users.users.<name>`.");
     sshKeys = mkOpt (listOf str) [ ] "List of SSH keys to authorize for the user.";
+    password = mkOpt (with types; nullOr str) null "The hashed password for the user.";
   };
 
   config = mkMerge [
@@ -33,6 +34,7 @@ in
         uid = 1000;
         extraGroups = cfg.extraGroups;
         openssh.authorizedKeys.keys = cfg.sshKeys;
+        password = mkIf (cfg.password != null) cfg.password;
       };
     }
 
