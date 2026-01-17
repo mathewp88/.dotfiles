@@ -60,7 +60,7 @@
         },
         {
           "active": false,
-          "command": "~/.dotfiles/home-manager/modules/hypr/scripts/powermenu.sh",
+          "command": "powermenu",
           "label": "",
           "type": "button"
         }
