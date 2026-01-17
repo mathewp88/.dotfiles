@@ -45,6 +45,7 @@ with lib.${namespace};
     };
     services = {
       avahi = enabled;
+      bazarr = enabled;
       calibre-web = enabled;
       immich = enabled;
       jellyfin = enabled;

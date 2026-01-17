@@ -47,10 +47,6 @@ in
         warn-dirty = false;
         log-lines = 50;
       };
-      # flake-utils-plus
-      # generateRegistryFromInputs = true;
-      # generateNixPathFromInputs = true;
-      # linkInputs = true;
     };
 
     # System AutoUpgrade

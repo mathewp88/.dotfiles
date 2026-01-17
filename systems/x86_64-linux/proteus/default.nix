@@ -6,7 +6,7 @@
 with lib;
 with lib.${namespace};
 {
-  networking.hostName = "ares";
+  networking.hostName = "proteus";
 
   olympus = {
     config = {
@@ -57,8 +57,8 @@ with lib.${namespace};
   # These settings apply ONLY when you run 'nixos-rebuild build-vm'
   virtualisation.vmVariant = {
     virtualisation = {
-      memorySize = 4096; # MiB
-      cores = 4;
+      memorySize = 8192; # MiB
+      cores = 8;
       graphics = true;
     };
   };
