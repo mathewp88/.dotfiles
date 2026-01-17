@@ -54,6 +54,7 @@ with lib.${namespace};
       nginx = enabled;
       tailscale = enabled;
       vaultwarden = enabled;
+      radarr = enabled;
     };
   };
 
