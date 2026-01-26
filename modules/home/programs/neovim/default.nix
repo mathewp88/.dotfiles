@@ -36,8 +36,6 @@ in
       vimdiffAlias = true;
       viAlias = true;
       extraPackages = with pkgs; [
-        python311
-        devpod
         rustc
         cargo
         ripgrep
@@ -46,10 +44,6 @@ in
         wget
         imagemagick
       ];
-      extraLuaPackages = ps: [ ps.magick ];
-      # Ensure no init.lua is made
-      extraConfig = "";
-      extraLuaConfig = "";
       # make mason and stuff work
       extraWrapperArgs = [
         "--suffix"
