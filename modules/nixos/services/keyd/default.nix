@@ -26,6 +26,8 @@ in
             # The main layer, if you choose to declare it in Nix
             main = {
               capslock = "overload(control, esc)";
+              leftalt = "leftmeta";
+              leftmeta = "leftalt";
             };
           };
           extraConfig = ''

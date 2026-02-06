@@ -52,7 +52,7 @@ in
         "$terminal" = terminalChoice;
         "$browser" = "firefox";
         "$file_manager" = "nautilus";
-        "$mainMod" = "ALT";
+        "$mainMod" = "SUPER";
 
         input.numlock_by_default = true;
 
