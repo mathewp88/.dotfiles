@@ -22,7 +22,6 @@ with libEx.${namespace};
       mangohud = enabled;
       spotify = enabled;
       yazi = enabled;
-      zathura = enabled;
     };
     services = {
       ludusavi = enabled;
