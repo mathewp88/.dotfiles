@@ -64,10 +64,19 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs @ { flake-parts, nixpkgs, home-manager, ... }:
+  outputs =
+    inputs@{
+      flake-parts,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
 
-      systems = [ "x86_64-linux" "aarch64-linux" ];
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
 
       flake = {
 
@@ -79,30 +88,27 @@
           sops-nix.nixosModules.sops
         ];
 
-          homeInputs = with inputs; [
-            sops-nix.homeManagerModules.sops
-            spicetify-nix.homeManagerModules.default
-          ];
+        homeInputs = with inputs; [
+          sops-nix.homeManagerModules.sops
+          spicetify-nix.homeManagerModules.default
+        ];
 
         lib = import ./lib {
           nixpkgs = nixpkgs;
           namespace = inputs.self.namespace;
         };
 
-        nixosConfigurations = 
-          import ./lib/mkHosts.nix {
-            inherit nixpkgs home-manager inputs;
-          };
+        nixosConfigurations = import ./lib/mkHosts.nix {
+          inherit nixpkgs home-manager inputs;
+        };
 
-        nixosModules =
-          import ./lib/mkNixosModules.nix {
-            lib = nixpkgs.lib;
-          };
+        nixosModules = import ./lib/mkNixosModules.nix {
+          lib = nixpkgs.lib;
+        };
 
-        homeModules =
-          import ./lib/mkHomeModules.nix {
-            lib = nixpkgs.lib;
-          };
+        homeModules = import ./lib/mkHomeModules.nix {
+          lib = nixpkgs.lib;
+        };
       };
     };
 }
