@@ -16,6 +16,7 @@ with libEx.${namespace};
       sops = enabled;
     };
     services = {
+      ssh = enabled;
     };
   };
 
