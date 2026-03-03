@@ -32,7 +32,6 @@ in
       };
       printing = {
         enable = true;
-        drivers = [ pkgs.cnijfilter2 ];
       };
     };
   };

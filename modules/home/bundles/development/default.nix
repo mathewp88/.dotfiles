@@ -20,6 +20,10 @@ in
     home.packages = with pkgs; [
       caligula
       nvitop
+      tomato-c
+
+      gemini-cli
+      codex
 
       # python
       uv
