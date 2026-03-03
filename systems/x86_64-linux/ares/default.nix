@@ -38,7 +38,7 @@ with lib.${namespace};
     programs = {
       plymouth = enabled;
       stylix = enabled;
-      wine = enabled;
+      # wine = enabled;
     };
 
     services = {
@@ -46,7 +46,7 @@ with lib.${namespace};
       docker = enabled;
       keyd = enabled;
       tailscale = enabled;
-      # printing = enabled;
+      printing = enabled;
     };
 
     system = {
