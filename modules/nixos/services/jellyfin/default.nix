@@ -18,7 +18,6 @@ in
   config = mkIf cfg.enable {
     services.jellyfin = {
       enable = true;
-      openFirewall = true;
       dataDir = "/data/jellyfin";
     };
     environment.systemPackages = with pkgs; [

@@ -19,7 +19,6 @@ in
       avahi = {
         enable = true;
         nssmdns4 = true;
-        openFirewall = true;
         wideArea = true;
         publish = {
           enable = true;

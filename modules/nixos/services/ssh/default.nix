@@ -23,7 +23,6 @@ in
         PermitRootLogin = "no"; # disable root login
         PasswordAuthentication = cfg.passwordAuth; # disable password login
       };
-      openFirewall = true;
     };
   };
 }

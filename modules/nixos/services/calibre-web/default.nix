@@ -53,14 +53,14 @@ in
           "/data/calibre/library:/calibre-library"
           "/data/calibre/plugins:/config/.config/calibre/plugins"
         ];
-        ports = [ "0.0.0.0:8083:8083" ];
+        ports = [ "127.0.0.1:8083:8083" ];
       };
 
       calibre-web-automated-book-downloader = {
         pull = "newer";
         image = "ghcr.io/calibrain/calibre-web-automated-book-downloader:latest";
         autoStart = true;
-        ports = [ "0.0.0.0:8084:8084" ];
+        ports = [ "127.0.0.1:8084:8084" ];
         environment = {
           FLASK_PORT = "8084";
           LOG_LEVEL = "info";

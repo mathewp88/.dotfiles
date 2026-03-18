@@ -18,7 +18,6 @@ in
   config = mkIf cfg.enable {
     services.cloudflare-warp = {
       enable = true;
-      openFirewall = true;
     };
   };
 }

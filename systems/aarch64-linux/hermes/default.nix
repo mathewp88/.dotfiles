@@ -52,7 +52,7 @@ with lib.${namespace};
       jellyfin = enabled;
       jellyseerr = enabled;
       glance = enabled;
-      nextcloud = enabled;
+      # nextcloud = enabled;
       nginx = enabled;
       prowlarr = enabled;
       qbittorrent = enabled;
