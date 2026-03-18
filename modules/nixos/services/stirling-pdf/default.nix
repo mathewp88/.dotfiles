@@ -21,8 +21,5 @@ in
         SERVER_PORT = 3000;
       };
     };
-    networking.firewall = {
-      allowedTCPPorts = [ 3000 ];
-    };
   };
 }

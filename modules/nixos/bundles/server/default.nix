@@ -41,10 +41,11 @@ in
       };
 
       services = {
+        fail2ban = enabled;
         security = enabled;
         ssh = {
           enable = true;
-          passwordAuth = true;
+          passwordAuth = false;
         };
       };
 

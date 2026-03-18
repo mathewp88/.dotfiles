@@ -36,11 +36,8 @@ in
         };
       };
     };
-    networking.firewall.allowedTCPPorts = [ 9696 ];
-
     services.flaresolverr = {
       enable = true;
-      openFirewall = true;
     };
   };
 }

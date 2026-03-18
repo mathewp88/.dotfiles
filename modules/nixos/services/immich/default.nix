@@ -26,13 +26,12 @@ in
 
       secretsFile = config.sops.secrets."immich".path;
 
-      host = "0.0.0.0";
       mediaLocation = "/data/immich";
 
       accelerationDevices = null;
 
       machine-learning = {
-        enable = true;
+        enable = false;
         # As immich user has no home
         environment = {
           HF_XET_CACHE = "/var/cache/immich/huggingface-xet";
@@ -56,7 +55,7 @@ in
       useACMEHost = "mathai.duckdns.org";
       forceSSL = true;
       locations."/" = {
-        proxyPass = "http://127.0.0.1:2283";
+        proxyPass = "http://[::1]:2283";
         proxyWebsockets = true;
         recommendedProxySettings = true;
         extraConfig = ''

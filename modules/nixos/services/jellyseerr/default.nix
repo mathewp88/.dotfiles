@@ -17,8 +17,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ 5055 ];
-
     services.nginx.virtualHosts."jellyseerr.mathai.duckdns.org" = {
       useACMEHost = "mathai.duckdns.org";
       forceSSL = true;
@@ -42,10 +40,10 @@ in
         autoStart = true;
         environment = {
           LOG_LEVEL = "debug";
-          TZ        = "Asia/Kolkata";
-          PORT      = "5055";
+          TZ = "Asia/Kolkata";
+          PORT = "5055";
         };
-        networks = [ "host" ];
+        ports = [ "127.0.0.1:5055:5055" ];
         volumes = [
           "/data/jellyseerr/config:/app/config"
         ];

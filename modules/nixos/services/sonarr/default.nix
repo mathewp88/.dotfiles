@@ -18,7 +18,6 @@ in
   config = mkIf cfg.enable {
     services.sonarr = {
       enable = true;
-      openFirewall = true;
       group = config.services.jellyfin.group;
       user = config.services.jellyfin.user;
       dataDir = "/data/sonarr";

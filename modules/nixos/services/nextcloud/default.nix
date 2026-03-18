@@ -23,7 +23,7 @@ in
     services.nextcloud = {
       enable = true;
       configureRedis = true;
-      package = pkgs.nextcloud32;
+      package = pkgs.nextcloud33;
       hostName = "nixcloud";
       home = "/data/nextcloud";
       https = true;

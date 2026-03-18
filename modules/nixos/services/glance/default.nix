@@ -23,9 +23,6 @@ in
       enable = true;
       environmentFile = config.sops.secrets."glance".path;
       settings = {
-        server = {
-          host = "0.0.0.0";
-        };
         branding = {
           hide-footer = true;
         };
