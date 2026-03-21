@@ -2,7 +2,6 @@
   config,
   lib,
   libEx,
-  pkgs,
   namespace,
   ...
 }:
@@ -10,15 +9,12 @@ with lib;
 with libEx.${namespace};
 let
   cfg = config.${namespace}.desktop.hyprland.keybinds;
-  powermenuScript = pkgs.writeShellScriptBin "powermenu" (builtins.readFile ./scripts/powermenu.sh);
 in
 {
   options.${namespace}.desktop.hyprland.keybinds = with types; {
     enable = mkBoolOpt false "Enable hyprland keybinds";
   };
   config = mkIf cfg.enable {
-
-    home.packages = [ powermenuScript ];
 
     wayland.windowManager.hyprland = {
       settings = {
@@ -34,8 +30,8 @@ in
           ", PRINT, exec, grimshot savecopy anything"
 
           "$mainMod, A, exec, loginctl lock-session"
-          "$mainMod SHIFT, Q, exec, powermenu"
-          "SUPER, SUPER_L, exec, rofi -show drun -theme ~/.config/rofi/launch.rasi"
+          "$mainMod SHIFT, Q, exec, noctalia-shell ipc call sessionMenu toggle"
+          "SUPER, SUPER_L, exec, noctalia-shell ipc call launcher toggle"
           # "$mainMod, D, exec, rofi -show drun -theme ~/.config/rofi/launch.rasi"
           "$mainMod, V, exec, $terminal --class=com.save.clipse -e clipse"
 
@@ -80,20 +76,16 @@ in
           ", XF86AudioPlay, exec, playerctl play-pause"
           ", XF86AudioPrev, exec, playerctl previous"
           ", XF86AudioNext, exec, playerctl next"
-          ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle --max-volume 120"
-          ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ];
-
         bindle = [
           # Volume
-          ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 120"
-          ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower --max-volume 120"
-          ", XF86InputRaiseVolume, exec, swayosd-client --input-volume raise"
-          ", XF86InputLowerVolume, exec, swayosd-client --input-volume lower"
-
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.2 @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
           # Brightness
-          ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
-          ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+          ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+          ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
         ];
 
         bindm = [

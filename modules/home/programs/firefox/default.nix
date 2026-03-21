@@ -27,8 +27,7 @@ in
 
   config = mkIf cfg.enable {
 
-    stylix.targets.firefox.enable = true;
-    # stylix.targets.firefox.firefoxGnomeTheme.enable = true;
+    stylix.targets.firefox.colorTheme.enable = true;
     stylix.targets.firefox.profileNames = [ "default" ];
 
     home.sessionVariables = {
@@ -190,6 +189,7 @@ in
             multi-account-containers
             temporary-containers
             improved-tube
+            firefox-color
           ];
           settings = {
             "uBlock0@raymondhill.net".settings = {
@@ -254,6 +254,9 @@ in
             default_area = "navbar";
           };
           "{3c6bf0cc-3ae2-42fb-9993-0d33104fdcaf}" = {
+            default_area = "menupanel";
+          };
+          "FirefoxColor@mozilla.com" = {
             default_area = "menupanel";
           };
         };

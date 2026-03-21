@@ -41,6 +41,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Spotify w/ modifications
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -91,6 +96,7 @@
         homeInputs = with inputs; [
           sops-nix.homeManagerModules.sops
           spicetify-nix.homeManagerModules.default
+          noctalia.homeModules.default
         ];
 
         lib = import ./lib {
