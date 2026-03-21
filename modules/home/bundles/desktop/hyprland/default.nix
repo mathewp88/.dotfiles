@@ -27,12 +27,6 @@ in
       desktop = {
         hyprland = enabled;
       };
-      programs = {
-        hyprlock = enabled;
-        rofi = enabled;
-        swaync = enabled;
-        waybar = enabled;
-      };
       services = {
         hypridle = enabled;
         xdg = enabled;

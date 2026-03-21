@@ -33,7 +33,6 @@ in
 
     services = {
       playerctld.enable = true;
-      swayosd.enable = true;
       clipse.enable = true;
       network-manager-applet.enable = true;
 
@@ -59,9 +58,7 @@ in
 
         input.numlock_by_default = true;
 
-        exec-once = [
-          "waybar"
-        ];
+        workspace = builtins.genList (x: "${toString (x + 1)}, persistent:true") 5;
 
         env = [
           "XDG_CURRENT_DESKTOP,Hyprland"
