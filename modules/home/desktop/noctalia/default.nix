@@ -9,6 +9,13 @@ with lib;
 with libEx.${namespace};
 let
   cfg = config.${namespace}.desktop.noctalia;
+  terminalChoice =
+    if config.${namespace}.programs.kitty.enable then
+      "kitty"
+    else if config.${namespace}.programs.ghostty.enable then
+      "ghostty"
+    else
+      "xterm";
 in
 {
   options.${namespace}.desktop.noctalia = with types; {
@@ -312,7 +319,7 @@ in
           position = "center";
           pinnedApps = [ ];
           sortByMostUsed = true;
-          terminalCommand = "kitty -e";
+          terminalCommand = "${terminalChoice} -e";
           customLaunchPrefixEnabled = false;
           customLaunchPrefix = "";
           viewMode = "grid";

@@ -22,7 +22,7 @@ in
 
     programs.nautilus-open-any-terminal = {
       enable = true;
-      terminal = "kitty"; # TODO
+      terminal = "ghostty"; # TODO
     };
   };
 }

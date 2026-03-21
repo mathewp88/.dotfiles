@@ -10,7 +10,6 @@ with libEx.${namespace};
 {
 
   olympus = {
-    desktop.noctalia = enabled;
     bundles = {
       common = enabled;
       desktop.hyprland = enabled;

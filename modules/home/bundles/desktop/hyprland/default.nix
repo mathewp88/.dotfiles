@@ -26,6 +26,7 @@ in
     olympus = {
       desktop = {
         hyprland = enabled;
+        noctalia = enabled;
       };
       services = {
         hypridle = enabled;

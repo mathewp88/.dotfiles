@@ -33,8 +33,6 @@ in
 
     services = {
       playerctld.enable = true;
-      clipse.enable = true;
-      network-manager-applet.enable = true;
 
       hyprpaper = {
         enable = true;
@@ -65,12 +63,6 @@ in
           "XDG_SESSION_TYPE,wayland"
           "XDG_SESSION_DESKTOP,Hyprland"
           "NIXOS_OZONE_WL,1"
-        ];
-
-        windowrule = [
-          "float on, match:class com.save.clipse"
-          "size 622 652, match:class com.save.clipse"
-          "stay_focused on, match:class com.save.clipse"
         ];
 
         general = {
