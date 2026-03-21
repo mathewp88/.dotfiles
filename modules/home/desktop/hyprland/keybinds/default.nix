@@ -33,7 +33,7 @@ in
           "$mainMod SHIFT, Q, exec, noctalia-shell ipc call sessionMenu toggle"
           "SUPER, SUPER_L, exec, noctalia-shell ipc call launcher toggle"
           # "$mainMod, D, exec, rofi -show drun -theme ~/.config/rofi/launch.rasi"
-          "$mainMod, V, exec, $terminal --class=com.save.clipse -e clipse"
+          "$mainMod, V, exec, noctalia-shell ipc call launcher clipboard"
 
           # Windows
           "$mainMod, J, movefocus, d"
