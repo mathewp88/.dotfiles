@@ -1,4 +1,4 @@
-{ ... }:
+{ osConfig, ... }:
 {
   programs.niri.settings = {
     input = {
@@ -37,9 +37,8 @@
       border = {
         enable = true;
         width = 2;
-        active.color = "#cba6f7";
-        inactive.color = "#505050";
-        urgent.color = "#9b0000";
+        active.color = "#${osConfig.lib.stylix.colors.base03}";
+        inactive.color = "#${osConfig.lib.stylix.colors.base02}";
       };
 
       shadow.enable = false;
@@ -65,7 +64,7 @@
     gestures.hot-corners.enable = false;
 
     debug = {
-      honor-xdg-activation-with-invalid-serial = {};
+      honor-xdg-activation-with-invalid-serial = { };
     };
   };
 }

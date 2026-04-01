@@ -46,20 +46,22 @@ in
 
     "Mod+Tab".action.spawn = noctalia "launcher windows";
 
-    "Mod+M".action = maximize-column;
+    "Mod+E".action = maximize-column;
 
-    "Mod+H".action = focus-monitor-left;
+    "Mod+H".action = focus-column-left;
     "Mod+J".action = focus-workspace-down;
     "Mod+K".action = focus-workspace-up;
-    "Mod+L".action = focus-monitor-right;
+    "Mod+L".action = focus-column-right;
 
     "Mod+Left".action = focus-column-left;
     "Mod+Right".action = focus-column-right;
     "Mod+Up".action = focus-window-up;
     "Mod+Down".action = focus-window-down;
 
-    "Mod+Shift+H".action = focus-column-left;
-    "Mod+Shift+L".action = focus-column-right;
+    "Mod+Shift+H".action = move-column-left;
+    "Mod+Shift+L".action = move-column-right;
+    "Mod+Shift+J".action = move-window-down;
+    "Mod+Shift+K".action = move-window-up;
 
     "Mod+Shift+1".action.move-column-to-workspace = 1;
     "Mod+Shift+2".action.move-column-to-workspace = 2;
