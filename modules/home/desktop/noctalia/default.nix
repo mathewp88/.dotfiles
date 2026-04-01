@@ -38,7 +38,7 @@ in
           monitors = [ ];
           density = "default";
           showOutline = false;
-          showCapsule = true;
+          showCapsule = false;
           capsuleColorKey = "none";
           widgetSpacing = 6;
           contentPadding = 2;
@@ -585,7 +585,6 @@ in
 
         colorSchemes = {
           useWallpaperColors = false;
-          predefinedScheme = "Rose Pine";
           darkMode = true;
           schedulingMode = "off";
           manualSunrise = "06:30";

@@ -28,8 +28,8 @@ in
       settings = {
         theme = "Rose Pine";
         font-size = 14;
-        window-padding-x = 5;
-        window-padding-y = 5;
+        window-padding-x = 10;
+        window-padding-y = 10;
         copy-on-select = "clipboard";
       };
     };

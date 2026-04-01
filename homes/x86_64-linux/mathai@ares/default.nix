@@ -24,7 +24,6 @@ with libEx.${namespace};
       yazi = enabled;
     };
     services = {
-      ludusavi = enabled;
       rclone = enabled;
     };
   };
