@@ -1,24 +1,11 @@
+{ inputs, ... }:
 {
-  options,
-  config,
-  lib,
-  pkgs,
-  inputs,
-  namespace,
-  ...
-}:
-with lib;
-with lib.${namespace};
-let
-  cfg = config.${namespace}.programs.stylix;
-in
-{
-  options.${namespace}.programs.stylix = with types; {
-    enable = mkBoolOpt false "Enable stylix";
-  };
-
-  config = mkIf cfg.enable (mkMerge [
-    (optionalAttrs (options ? stylix) {
+  flake.nixosModules.stylix =
+    { pkgs
+    , ...
+    }:
+    {
+      imports = [ inputs.stylix.nixosModules.stylix ];
       stylix = {
         enable = true;
         autoEnable = true;
@@ -55,6 +42,5 @@ in
         image = ./cherry.png;
         polarity = "dark";
       };
-    })
-  ]);
+    };
 }

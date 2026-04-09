@@ -1,0 +1,30 @@
+{
+  flake.nixosModules.caddy =
+    { config
+    , pkgs
+    , ...
+    }:
+    {
+      sops.secrets."duckdns-token" = { };
+
+      services.caddy = {
+        enable = true;
+        package = pkgs.caddy.withPlugins {
+          plugins = [ "github.com/caddy-dns/duckdns@v0.5.0" ];
+          hash = "sha256-pLrGS7nykBAFga3v90IJ7tt2mjLxrBJI2E5mCSGCeg4=";
+        };
+        globalConfig = ''
+          acme_dns duckdns {
+            api_token {env.DUCKDNS_TOKEN}
+          }
+        '';
+      };
+
+      systemd.services.caddy.serviceConfig.EnvironmentFile = config.sops.secrets."duckdns-token".path;
+
+      networking.firewall.allowedTCPPorts = [
+        80
+        443
+      ];
+    };
+}
