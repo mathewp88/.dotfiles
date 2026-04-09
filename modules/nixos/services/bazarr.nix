@@ -1,7 +1,8 @@
 {
   flake.nixosModules.bazarr =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       services.bazarr = {
@@ -9,5 +10,9 @@
         inherit (config.services.jellyfin) user group;
         dataDir = "/data/bazarr";
       };
+      services.caddy.virtualHosts."bazarr.mathai.duckdns.org".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy localhost:6767
+      '';
     };
 }

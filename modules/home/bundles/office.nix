@@ -5,7 +5,7 @@
     }:
     {
       home.packages = with pkgs; [
-        # fladder
+        tsukimi
         evince
         libreoffice
         obsidian

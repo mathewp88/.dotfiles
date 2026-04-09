@@ -1,10 +1,12 @@
 {
   flake.homeModules.stylix =
     { pkgs
+    , config
     , ...
     }:
     {
       home.packages = [ pkgs.papirus-icon-theme ];
+      gtk.gtk4.theme = config.gtk.theme;
       gtk.iconTheme.name = "Papirus-Dark";
       stylix = {
         enable = true;
