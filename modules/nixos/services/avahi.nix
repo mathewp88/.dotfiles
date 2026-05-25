@@ -4,7 +4,6 @@
       avahi = {
         enable = true;
         nssmdns4 = true;
-        wideArea = true;
         publish = {
           enable = true;
           addresses = true;
