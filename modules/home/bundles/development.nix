@@ -14,6 +14,7 @@
         caligula
         nvitop
         planify
+        gh
 
         gemini-cli
         codex

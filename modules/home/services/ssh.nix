@@ -9,69 +9,68 @@
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
-        matchBlocks = {
+        settings = {
           "*" = {
             ## FOR SAFETY, DO NOT OVERRIDE !! ##
-            forwardAgent = lib.mkForce false;
-            hashKnownHosts = lib.mkForce true;
+            ForwardAgent = lib.mkForce false;
+            HashKnownHosts = lib.mkForce true;
 
-            addKeysToAgent = "yes";
-            serverAliveInterval = 60;
-            serverAliveCountMax = 10;
-            compression = false;
-            userKnownHostsFile = "~/.ssh/known_hosts";
-            controlMaster = "auto";
-            controlPath = "~/.ssh/master-%r@%n:%p";
-            controlPersist = "no";
+            AddKeysToAgent = "yes";
+            ServerAliveInterval = 60;
+            ServerAliveCountMax = 10;
+            Compression = false;
+            UserKnownHostsFile = "~/.ssh/known_hosts";
+            ControlMaster = "auto";
+            ControlPath = "~/.ssh/master-%r@%n:%p";
+            ControlPersist = "no";
 
-            setEnv = {
+            SetEnv = {
               TERM = "xterm-256color";
             };
-
           };
 
           "github.com" = {
-            user = "git";
-            hostname = "ssh.github.com";
-            identityFile = "${config.home.homeDirectory}/.ssh/id_github";
-            identitiesOnly = true;
-            port = 443;
+            User = "git";
+            HostName = "ssh.github.com";
+            IdentityFile = "${config.home.homeDirectory}/.ssh/id_github";
+            IdentitiesOnly = true;
+            Port = 443;
           };
 
           "blazer" = {
-            user = "mathai.mathew";
-            hostname = "10.2.36.177";
-            identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
-            identitiesOnly = true;
+            User = "mathai.mathew";
+            HostName = "10.2.36.177";
+            IdentityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
+            IdentitiesOnly = true;
           };
 
           "neon" = {
-            user = "mathai_mathew";
-            hostname = "10.2.36.169";
-            identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
-            identitiesOnly = true;
+            User = "mathai_mathew";
+            HostName = "10.2.36.169";
+            IdentityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
+            IdentitiesOnly = true;
           };
 
           "ada" = {
-            user = "mathai.mathew";
-            hostname = "10.4.24.24";
-            identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
-            identitiesOnly = true;
+            User = "mathai.mathew";
+            HostName = "10.4.24.24";
+            IdentityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
+            IdentitiesOnly = true;
           };
 
           "void" = {
-            user = "mathai.mathew";
-            hostname = "10.2.36.213";
-            identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
-            identitiesOnly = true;
-          };
-          "hermes" = {
-            user = "mathai";
-            hostname = "100.119.255.54";
-            identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
-            identitiesOnly = true;
+            User = "mathai.mathew";
+            HostName = "10.2.36.213";
+            IdentityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
+            IdentitiesOnly = true;
           };
 
+          "hermes" = {
+            User = "mathai";
+            HostName = "100.119.255.54";
+            IdentityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
+            IdentitiesOnly = true;
+          };
         };
       };
       services.ssh-agent.enable = true;

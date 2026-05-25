@@ -33,6 +33,7 @@
       self.nixosModules.automatic-timezone
       self.nixosModules.battery
       self.nixosModules.secure-boot
+      self.nixosModules.gnome
     ];
 
     preferences = {
