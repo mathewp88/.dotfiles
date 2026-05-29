@@ -9,7 +9,7 @@
       self.homeModules.shell-bundle
 
       self.homeModules.hyprland
-      self.homeModules.niri
+      # self.homeModules.niri
 
       self.homeModules.firefox
       self.homeModules.spotify
