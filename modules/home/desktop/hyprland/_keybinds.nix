@@ -1,81 +1,84 @@
+{ lib, config, ... }:
+let
+  terminalChoice =
+    if config.programs.kitty.enable then
+      "kitty"
+    else if config.programs.ghostty.enable then
+      "ghostty"
+    else
+      "xterm";
+
+  workspaceBinds = lib.concatMapStrings (
+    x:
+    let
+      ws = toString (x + 1);
+      key = toString (if x + 1 == 10 then 0 else x + 1);
+    in
+    ''
+      hl.bind("SUPER + ${key}", hl.dsp.focus({ workspace = ${ws} }))
+      hl.bind("SUPER + SHIFT + ${key}", hl.dsp.window.move({ workspace = ${ws} }))
+    ''
+  ) (lib.range 0 9);
+in
 {
-  wayland.windowManager.hyprland = {
-    settings = {
-      #Keybinds
-      bind = [
-        "$mainMod, return, exec, $terminal"
-        "$mainMod, F, exec, $browser"
-        "$mainMod, D, exec, $file_manager"
-        "$mainMod, Q, killactive"
-        #"$mainMod, P, pseudo"
-        "$mainMod SHIFT, R, exec, hyprctl reload"
-        "$mainMod, E, fullscreen"
-        ", PRINT, exec, grimshot savecopy anything"
+  wayland.windowManager.hyprland.extraConfig = ''
+    local mainMod = "SUPER"
 
-        "$mainMod, A, exec, noctalia-shell ipc call lockScreen lock"
-        "$mainMod SHIFT, Q, exec, noctalia-shell ipc call sessionMenu toggle"
-        "SUPER, SPACE, exec, noctalia-shell ipc call launcher toggle"
-        # "$mainMod, D, exec, rofi -show drun -theme ~/.config/rofi/launch.rasi"
-        "$mainMod, V, exec, noctalia-shell ipc call launcher clipboard"
+    -- Apps
+    hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("${terminalChoice}"))
+    hl.bind(mainMod .. " + F",      hl.dsp.exec_cmd("firefox"))
+    hl.bind(mainMod .. " + D",      hl.dsp.exec_cmd("nautilus"))
 
-        # Windows
-        "$mainMod, J, movefocus, d"
-        "$mainMod, K, movefocus, u"
-        "$mainMod, H, movefocus, l"
-        "$mainMod, L, movefocus, r"
-        "$mainMod SHIFT,J,movewindow,d"
-        "$mainMod SHIFT,K,movewindow,u"
-        "$mainMod SHIFT,H,movewindow,l"
-        "$mainMod SHIFT,L,movewindow,r"
-        "$mainMod, T, togglefloating"
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
-      ]
-      ++ (
-        # workspaces
-        # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-        builtins.concatLists (
-          builtins.genList
-            (
-              x:
-              let
-                ws =
-                  let
-                    c = (x + 1) / 10;
-                  in
-                  toString (x + 1 - (c * 10));
-              in
-              [
-                "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mainMod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
-              ]
-            ) 10
-        )
-      );
+    -- Window control
+    hl.bind(mainMod .. " + Q",         hl.dsp.window.close())
+    hl.bind(mainMod .. " + E",         hl.dsp.window.fullscreen())
+    hl.bind(mainMod .. " + T",         hl.dsp.window.float({ action = "toggle" }))
+    hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 
-      bindl = [
-        # Volume
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioPrev, exec, playerctl previous"
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-      ];
-      bindle = [
-        # Volume
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        # Brightness
-        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-      ];
+    -- Screenshot
+    hl.bind("PRINT", hl.dsp.exec_cmd("grimshot savecopy anything"))
 
-      bindm = [
-        "$mainMod, mouse:272, movewindow"
-        "$mainMod, mouse:273, resizewindow"
-      ];
-    };
-  };
+    -- Noctalia
+    hl.bind(mainMod .. " + A",         hl.dsp.exec_cmd("noctalia-shell ipc call lockScreen lock"))
+    hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("noctalia-shell ipc call sessionMenu toggle"))
+    hl.bind(mainMod .. " + SPACE",     hl.dsp.exec_cmd("noctalia-shell ipc call launcher toggle"))
+    hl.bind(mainMod .. " + V",         hl.dsp.exec_cmd("noctalia-shell ipc call launcher clipboard"))
+
+    -- Focus
+    hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
+    hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+    hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
+    hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
+
+    -- Move window
+    hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
+    hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
+    hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
+    hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
+
+    -- Scratchpad
+    hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
+    hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+
+    -- Workspaces
+    ${workspaceBinds}
+
+    -- Mouse
+    hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+    hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+    -- Media
+    hl.bind("XF86AudioPlay",    hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+    hl.bind("XF86AudioPrev",    hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+    hl.bind("XF86AudioNext",    hl.dsp.exec_cmd("playerctl next"),       { locked = true })
+    hl.bind("XF86AudioMute",    hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),   { locked = true })
+    hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
+    hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"),   { locked = true, repeating = true })
+    hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true })
+
+
+    -- Brightness
+    hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl set 5%+"), { locked = true, repeating = true })
+    hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { locked = true, repeating = true })
+  '';
 }

@@ -15,7 +15,7 @@
       self.nixosModules.user
 
       self.nixosModules.hyprland
-      self.nixosModules.niri
+      # self.nixosModules.niri
       self.nixosModules.bluetooth
       self.nixosModules.btrfs
       self.nixosModules.nvidia
