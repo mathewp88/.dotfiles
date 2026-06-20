@@ -7,6 +7,7 @@
     }:
     {
       imports = [
+        self.homeModules.atuin
         self.homeModules.direnv
       ];
 

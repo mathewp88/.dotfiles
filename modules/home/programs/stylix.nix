@@ -1,11 +1,11 @@
 {
   flake.homeModules.stylix =
-    { pkgs
-    , config
-    , ...
+    {
+      pkgs,
+      config,
+      ...
     }:
     {
-      gtk.gtk4.theme = config.gtk.theme;
       stylix = {
         enable = true;
         autoEnable = true;
