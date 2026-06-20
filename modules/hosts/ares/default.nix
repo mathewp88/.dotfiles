@@ -16,6 +16,7 @@
 
       self.nixosModules.hyprland
       # self.nixosModules.niri
+      self.nixosModules.cloudflare-warp
       self.nixosModules.bluetooth
       self.nixosModules.btrfs
       self.nixosModules.nvidia
@@ -33,6 +34,7 @@
       self.nixosModules.automatic-timezone
       self.nixosModules.battery
       self.nixosModules.secure-boot
+      self.nixosModules.gnome
     ];
 
     preferences = {
