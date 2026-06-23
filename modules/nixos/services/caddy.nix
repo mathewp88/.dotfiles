@@ -11,7 +11,7 @@
         enable = true;
         package = pkgs.caddy.withPlugins {
           plugins = [ "github.com/caddy-dns/duckdns@v0.5.0" ];
-          hash = "sha256-PC0r+dzU9Dp1yjE+k6AXGct6Hhz0zbE0EWbnweHwl2o=";
+          hash = "sha256-4TbgFecnVvdJ3fbbLR46Dhx5m0rPPryXQX9x8tr1tAY=";
         };
         globalConfig = ''
           acme_dns duckdns {
