@@ -44,6 +44,15 @@
           type = lib.types.nullOr lib.types.str;
           default = null;
         };
+
+        useSopsPassword = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+          description = ''
+            Whether to source user and root hashed passwords from sops.
+            Disable on hosts that do not import the sops module.
+          '';
+        };
       };
 
       config = lib.mkMerge [
@@ -64,7 +73,7 @@
           // cfg.extraOptions;
         }
 
-        (lib.mkIf (config.sops.defaultSopsFile != null) {
+        (lib.mkIf cfg.useSopsPassword {
           sops.secrets."${cfg.name}-password".neededForUsers = true;
           sops.secrets."root-password".neededForUsers = true;
 
