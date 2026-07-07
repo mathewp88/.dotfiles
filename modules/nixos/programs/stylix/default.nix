@@ -1,8 +1,9 @@
 { inputs, ... }:
 {
   flake.nixosModules.stylix =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       imports = [ inputs.stylix.nixosModules.stylix ];
@@ -39,7 +40,10 @@
             terminal = 13;
           };
         };
-        image = ./fish.png;
+        image = pkgs.fetchurl {
+          url = "https://raw.githubusercontent.com/iruzo/wp/main/desktop-nord-dark-koi.png";
+          sha256 = "sha256-/ybcRRleApkw3JXQTZgOsYznRwS7pIRvZYp0Vyls7i4=";
+        };
         polarity = "dark";
       };
     };

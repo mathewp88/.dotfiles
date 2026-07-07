@@ -36,14 +36,17 @@
         vimdiffAlias = true;
         viAlias = true;
         extraPackages = with pkgs; [
-          rustc
-          cargo
-          python3
-          ripgrep
-          curl
           fd
-          wget
-          imagemagick
+          ripgrep
+          fzf
+          tree-sitter
+          ty
+          ruff
+          lua-language-server
+          stylua
+          rust-analyzer
+          nixd
+          nixfmt
         ];
         # make mason and stuff work
         extraWrapperArgs = [
