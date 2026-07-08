@@ -1,6 +1,7 @@
 {
   flake.nixosModules.vms =
     { pkgs
+    , config
     , ...
     }:
     {
@@ -18,9 +19,8 @@
       virtualisation.spiceUSBRedirection.enable = true;
 
       # Allow VM management
-      users.groups.libvirtd.members = [ "mathai" ];
-      users.groups.kvm.members = [ "mathai" ];
-
+      users.groups.libvirtd.members = [ config.preferences.user.name ];
+      users.groups.kvm.members = [ config.preferences.user.name ];
       environment.systemPackages = with pkgs; [
         gnome-boxes # VM management
         dnsmasq # VM networking

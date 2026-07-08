@@ -22,7 +22,7 @@
         wget
         curl
         git
-        fastfetch
+        fetch
         p7zip-rar
       ];
 
