@@ -1,9 +1,10 @@
 { inputs, ... }:
 {
   flake.nixosModules.sops =
-    { config
-    , pkgs
-    , ...
+    {
+      config,
+      pkgs,
+      ...
     }:
     {
       imports = [

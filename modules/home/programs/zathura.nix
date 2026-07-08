@@ -1,7 +1,8 @@
 {
   flake.homeManager.zathura =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     let
       myZathura = pkgs.zathura.override {

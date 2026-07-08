@@ -1,8 +1,9 @@
 {
   flake.nixosModules.podman =
-    { config
-    , pkgs
-    , ...
+    {
+      config,
+      pkgs,
+      ...
     }:
     {
       virtualisation.containers.enable = true;
@@ -13,10 +14,8 @@
       };
       environment.systemPackages = with pkgs; [ podman-compose ];
 
-      hardware.nvidia-container-toolkit.enable = builtins.any
-        (
-          driver: driver == "nvidia"
-        )
-        config.services.xserver.videoDrivers;
+      hardware.nvidia-container-toolkit.enable = builtins.any (
+        driver: driver == "nvidia"
+      ) config.services.xserver.videoDrivers;
     };
 }

@@ -18,7 +18,7 @@
     { open-maximized = true; }
 
     {
-      matches = [{ title = "Picture in picture"; }];
+      matches = [ { title = "Picture in picture"; } ];
       open-floating = true;
       default-floating-position = {
         x = 32;
@@ -28,7 +28,7 @@
     }
 
     {
-      matches = [{ title = "Discord Popout"; }];
+      matches = [ { title = "Discord Popout"; } ];
       open-floating = true;
       default-floating-position = {
         x = 32;
@@ -75,7 +75,7 @@
     }
 
     {
-      matches = [{ app-id = "org.telegram.desktop"; }];
+      matches = [ { app-id = "org.telegram.desktop"; } ];
       block-out-from = "screencast";
     }
   ];

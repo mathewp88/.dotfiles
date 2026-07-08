@@ -1,7 +1,8 @@
-{ inputs
-, lib
-, self
-, ...
+{
+  inputs,
+  lib,
+  self,
+  ...
 }:
 {
   flake.nixosConfigurations.proteus = inputs.nixpkgs.lib.nixosSystem {
@@ -11,8 +12,9 @@
   };
 
   flake.nixosModules.hostProteus =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       imports = [

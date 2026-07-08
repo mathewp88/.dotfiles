@@ -1,7 +1,8 @@
 {
   flake.homeModules.rclone =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       home.packages = [ pkgs.rclone ];

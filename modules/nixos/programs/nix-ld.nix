@@ -1,7 +1,8 @@
 {
   flake.nixosModules.nix-ld =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       programs.nix-ld = {

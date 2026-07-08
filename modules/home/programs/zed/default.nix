@@ -1,8 +1,9 @@
 {
   flake.homeModules.zed =
-    { pkgs
-    , lib
-    , ...
+    {
+      pkgs,
+      lib,
+      ...
     }:
     {
       # home.sessionVariables = {

@@ -1,7 +1,8 @@
 {
   flake.homeModules.desktopEntries =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     let
       terminalChoice =

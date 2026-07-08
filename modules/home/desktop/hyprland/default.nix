@@ -1,8 +1,9 @@
 {
   flake.homeModules.hyprland =
-    { osConfig
-    , pkgs
-    , ...
+    {
+      osConfig,
+      pkgs,
+      ...
     }:
     let
       stylixColors = osConfig.lib.stylix.colors;

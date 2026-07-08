@@ -1,9 +1,10 @@
 { inputs, ... }:
 {
   flake.homeModules.spotify =
-    { lib
-    , pkgs
-    , ...
+    {
+      lib,
+      pkgs,
+      ...
     }:
     {
       imports = [

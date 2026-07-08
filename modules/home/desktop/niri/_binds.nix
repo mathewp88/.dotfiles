@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }:
 let
   noctalia =
@@ -81,7 +82,6 @@ in
     "Mod+0".action.focus-workspace = 10;
 
     "Mod+V".action.spawn = noctalia "panel-toggle clipboard";
-
 
     "Print".action = spawn [
       "niri"

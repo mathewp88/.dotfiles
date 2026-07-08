@@ -6,7 +6,8 @@
     # nix develop
     devShells.default = pkgs.mkShell {
       packages = with pkgs; [
-        nixpkgs-fmt
+        nixfmt
+        treefmt
         deadnix
         statix
         nil

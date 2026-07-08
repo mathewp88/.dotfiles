@@ -1,7 +1,8 @@
 {
   flake.nixosModules.polkit-gnome =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       environment.systemPackages = with pkgs; [

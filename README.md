@@ -69,8 +69,8 @@ sudo --preserve-env=SSH_AUTH_SOCK nixos-rebuild switch --flake .#ares
 ## Developer tooling
 
 ```bash
-nix develop -c $SHELL       # shell with nixpkgs-fmt, deadnix, statix, nil
-nix fmt .          # format all .nix files
+nix develop -c $SHELL       # shell with treefmt, deadnix, statix, nil
+treefmt          # format all .nix files
 deadnix .          # find dead code
 statix check .     # lint for anti-patterns
 ```

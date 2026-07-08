@@ -1,12 +1,11 @@
 {
-  flake.homeModules.zoxide =
-    {
-      programs.zoxide = {
-        enable = true;
-        enableZshIntegration = true;
-        options = [
-          "--cmd cd"
-        ];
-      };
+  flake.homeModules.zoxide = {
+    programs.zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      options = [
+        "--cmd cd"
+      ];
     };
+  };
 }

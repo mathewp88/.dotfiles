@@ -1,7 +1,8 @@
 {
   flake.nixosModules.nautilus =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       environment.systemPackages = with pkgs; [

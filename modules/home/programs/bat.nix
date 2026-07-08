@@ -1,7 +1,8 @@
 {
   flake.homeModules.bat =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       programs.bat = {

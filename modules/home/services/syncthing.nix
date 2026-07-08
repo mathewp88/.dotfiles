@@ -1,7 +1,8 @@
 {
   flake.homeModules.syncthing =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       sops.secrets = {

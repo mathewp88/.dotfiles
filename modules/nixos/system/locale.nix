@@ -1,7 +1,8 @@
 {
   flake.nixosModules.locale =
-    { lib
-    , ...
+    {
+      lib,
+      ...
     }:
     {
       i18n = {

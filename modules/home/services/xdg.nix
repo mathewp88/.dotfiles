@@ -1,7 +1,8 @@
 {
   flake.homeModules.xdg =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       xdg.userDirs.setSessionVariables = true;

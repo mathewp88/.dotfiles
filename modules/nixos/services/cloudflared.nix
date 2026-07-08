@@ -1,7 +1,8 @@
 {
   flake.nixosModules.clourflared =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       sops.secrets = {

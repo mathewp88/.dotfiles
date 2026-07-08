@@ -1,7 +1,8 @@
 {
   flake.nixosModules.jellyfin =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       services.jellyfin = {

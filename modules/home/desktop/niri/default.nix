@@ -1,8 +1,9 @@
 { inputs, ... }:
 {
   flake.homeModules.niri =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       imports = [

@@ -1,7 +1,8 @@
 {
   flake.nixosModules.authelia =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       services.authelia.instances.main = {

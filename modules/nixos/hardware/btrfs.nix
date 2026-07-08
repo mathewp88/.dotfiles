@@ -1,10 +1,9 @@
 {
-  flake.nixosModules.btrfs =
-    {
-      services.btrfs.autoScrub = {
-        enable = true;
-        interval = "monthly";
-        fileSystems = [ "/" ];
-      };
+  flake.nixosModules.btrfs = {
+    services.btrfs.autoScrub = {
+      enable = true;
+      interval = "monthly";
+      fileSystems = [ "/" ];
     };
+  };
 }

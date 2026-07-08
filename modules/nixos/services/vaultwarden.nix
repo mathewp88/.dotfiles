@@ -1,7 +1,8 @@
 {
   flake.nixosModules.vaultwarden =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       services.vaultwarden = {

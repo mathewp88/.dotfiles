@@ -1,7 +1,8 @@
 {
   flake.homeModules.office-bundle =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       home.packages = with pkgs; [

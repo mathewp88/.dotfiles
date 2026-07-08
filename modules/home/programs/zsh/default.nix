@@ -1,13 +1,18 @@
 {
   flake.homeModules.zsh =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     {
       programs.zsh = {
         enable = true;
         dotDir = "${config.xdg.configHome}/zsh";
+        envExtra = ''
+          setopt no_global_rcs
+        ''; # Skips /etc/zshrc & /etc/zprofile (duplicate compinit, dircolors, promptinit); /etc/zshenv (PATH) still loads
         historySubstringSearch = {
           enable = true;
           searchDownKey = [ "$terminfo[kcud1]" ];
@@ -41,6 +46,7 @@
           rm = "trash";
         };
         initContent = lib.mkBefore ''
+          eval "$(${pkgs.coreutils}/bin/dircolors -b)"
           ${builtins.readFile ./.zshrc}
         '';
       };

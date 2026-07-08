@@ -1,8 +1,9 @@
 {
   flake.nixosModules.hostProteusHardware =
-    { lib
-    , modulesPath
-    , ...
+    {
+      lib,
+      modulesPath,
+      ...
     }:
     {
       imports = [

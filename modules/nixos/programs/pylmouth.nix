@@ -1,7 +1,8 @@
 {
   flake.nixosModules.plymouth =
-    { lib
-    , ...
+    {
+      lib,
+      ...
     }:
     {
       boot = {

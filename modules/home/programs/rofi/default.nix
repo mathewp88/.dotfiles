@@ -1,8 +1,9 @@
 {
   flake.homeModules.rofi =
-    { osConfig
-    , pkgs
-    , ...
+    {
+      osConfig,
+      pkgs,
+      ...
     }:
     let
       stylixColors = osConfig.lib.stylix.colors;

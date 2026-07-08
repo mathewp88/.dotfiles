@@ -1,7 +1,8 @@
 {
   flake.nixosModules.thunar =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       environment.systemPackages = with pkgs; [

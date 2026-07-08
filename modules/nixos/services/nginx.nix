@@ -1,7 +1,8 @@
 {
   flake.nixosModules.nginx =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       sops.secrets = {

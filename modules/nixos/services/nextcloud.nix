@@ -1,8 +1,9 @@
 {
   flake.nixosModules.nextcloud =
-    { config
-    , pkgs
-    , ...
+    {
+      config,
+      pkgs,
+      ...
     }:
     {
       sops.secrets = {

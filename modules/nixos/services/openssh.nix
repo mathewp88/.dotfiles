@@ -1,8 +1,9 @@
 {
   flake.nixosModules.openssh =
-    { lib
-    , config
-    , ...
+    {
+      lib,
+      config,
+      ...
     }:
     {
       options.preferences.openssh.passwordAuth = lib.mkOption {

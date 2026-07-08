@@ -1,8 +1,9 @@
 {
   flake.homeModules.neovim =
-    { pkgs
-    , lib
-    , ...
+    {
+      pkgs,
+      lib,
+      ...
     }:
     let
       linker = lib.fileContents "${pkgs.binutils}/nix-support/dynamic-linker";

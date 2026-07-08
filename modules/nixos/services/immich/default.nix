@@ -1,7 +1,8 @@
 {
   flake.nixosModules.immich =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       sops.secrets = {

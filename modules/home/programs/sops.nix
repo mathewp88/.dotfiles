@@ -1,9 +1,10 @@
 { inputs, ... }:
 {
   flake.homeModules.sops =
-    { osConfig
-    , config
-    , ...
+    {
+      osConfig,
+      config,
+      ...
     }:
     {
       imports = [

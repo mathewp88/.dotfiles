@@ -1,7 +1,8 @@
 {
   flake.homeModules.swaync =
-    { osConfig
-    , ...
+    {
+      osConfig,
+      ...
     }:
     let
       stylixColors = osConfig.lib.stylix.colors;

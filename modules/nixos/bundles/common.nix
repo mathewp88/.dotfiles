@@ -1,8 +1,9 @@
 { self, ... }:
 {
   flake.nixosModules.common-bundle =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       imports = [

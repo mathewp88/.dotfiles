@@ -1,8 +1,9 @@
 {
   flake.homeModules.lazygit =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       stylixEnabled = config.programs.stylix.enable or false;

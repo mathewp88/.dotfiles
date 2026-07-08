@@ -1,9 +1,10 @@
 { inputs, ... }:
 {
   flake.nixosModules.secure-boot =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     {
       imports = [

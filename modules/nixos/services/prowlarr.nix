@@ -1,9 +1,10 @@
 {
   flake.nixosModules.prowlarr =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
       dataDir = "/data/prowlarr";

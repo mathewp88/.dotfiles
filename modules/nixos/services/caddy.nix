@@ -1,8 +1,9 @@
 {
   flake.nixosModules.caddy =
-    { config
-    , pkgs
-    , ...
+    {
+      config,
+      pkgs,
+      ...
     }:
     {
       sops.secrets."duckdns-token" = { };

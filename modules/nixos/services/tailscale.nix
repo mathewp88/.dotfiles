@@ -1,7 +1,8 @@
 {
   flake.nixosModules.tailscale =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       sops.secrets = {

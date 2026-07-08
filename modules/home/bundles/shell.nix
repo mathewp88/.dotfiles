@@ -1,8 +1,9 @@
 { self, ... }:
 {
   flake.homeModules.shell-bundle =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       imports = [

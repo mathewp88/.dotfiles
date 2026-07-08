@@ -1,8 +1,9 @@
 {
   flake.homeModules.powerlevel10k =
-    { lib
-    , pkgs
-    , ...
+    {
+      lib,
+      pkgs,
+      ...
     }:
     {
       programs.zsh = {

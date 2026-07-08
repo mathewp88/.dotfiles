@@ -1,8 +1,9 @@
 { self, ... }:
 {
   flake.homeModules.common-bundle =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       imports = [

@@ -1,8 +1,9 @@
 {
   flake.nixosModules.hostHermes =
-    { lib
-    , modulesPath
-    , ...
+    {
+      lib,
+      modulesPath,
+      ...
     }:
     {
       imports = [

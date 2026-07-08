@@ -1,8 +1,9 @@
 {
   flake.nixosModules.docker =
-    { config
-    , pkgs
-    , ...
+    {
+      config,
+      pkgs,
+      ...
     }:
     {
       environment.systemPackages = with pkgs; [ xhost ];
@@ -21,10 +22,8 @@
           };
         };
       };
-      hardware.nvidia-container-toolkit.enable = builtins.any
-        (
-          driver: driver == "nvidia"
-        )
-        config.services.xserver.videoDrivers;
+      hardware.nvidia-container-toolkit.enable = builtins.any (
+        driver: driver == "nvidia"
+      ) config.services.xserver.videoDrivers;
     };
 }

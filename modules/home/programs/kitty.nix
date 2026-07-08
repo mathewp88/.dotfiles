@@ -1,7 +1,8 @@
 {
   flake.homeModules.kitty =
-    { lib
-    , ...
+    {
+      lib,
+      ...
     }:
     {
 

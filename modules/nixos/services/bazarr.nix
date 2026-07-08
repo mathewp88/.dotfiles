@@ -1,7 +1,8 @@
 {
   flake.nixosModules.bazarr =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       services.bazarr = {

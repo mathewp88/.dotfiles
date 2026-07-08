@@ -1,9 +1,10 @@
 {
   flake.homeModules.hyprlock =
-    { config
-    , osConfig
-    , pkgs
-    , ...
+    {
+      config,
+      osConfig,
+      pkgs,
+      ...
     }:
     let
       weatherScript = pkgs.writeShellScriptBin "weather" (builtins.readFile ./scripts/weather.sh);

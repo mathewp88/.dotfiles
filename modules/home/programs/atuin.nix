@@ -1,7 +1,8 @@
 {
   flake.homeModules.atuin =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       sops.secrets = {

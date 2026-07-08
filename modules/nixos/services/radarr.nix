@@ -1,7 +1,8 @@
 {
   flake.nixosModules.radarr =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       services.radarr = {

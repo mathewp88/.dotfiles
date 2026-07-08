@@ -1,7 +1,8 @@
 {
   flake.nixosModules.calibre-web =
-    { config
-    , ...
+    {
+      config,
+      ...
     }:
     {
       sops.secrets = {

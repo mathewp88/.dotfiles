@@ -1,9 +1,10 @@
 { inputs, ... }:
 {
   flake.homeModules.firefox =
-    { pkgs
-    , config
-    , ...
+    {
+      pkgs,
+      config,
+      ...
     }:
     let
       firefoxAddonsPkgs = import inputs.nixpkgs {

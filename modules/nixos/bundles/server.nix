@@ -1,8 +1,9 @@
 { self, ... }:
 {
   flake.nixosModules.server-bundle =
-    { pkgs
-    , ...
+    {
+      pkgs,
+      ...
     }:
     {
       imports = [
