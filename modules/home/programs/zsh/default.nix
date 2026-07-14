@@ -13,6 +13,7 @@
         envExtra = ''
           setopt no_global_rcs
         ''; # Skips /etc/zshrc & /etc/zprofile (duplicate compinit, dircolors, promptinit); /etc/zshenv (PATH) still loads
+        defaultKeymap = "emacs";
         historySubstringSearch = {
           enable = true;
           searchDownKey = [ "$terminfo[kcud1]" ];
