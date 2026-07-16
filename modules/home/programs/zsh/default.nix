@@ -46,7 +46,7 @@
           clean = "nh clean all -k 5";
           rm = "trash";
         };
-        initContent = lib.mkBefore ''
+        initContent = lib.mkAfter ''
           eval "$(${pkgs.coreutils}/bin/dircolors -b)"
           ${builtins.readFile ./.zshrc}
         '';

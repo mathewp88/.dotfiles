@@ -14,7 +14,6 @@
       home.packages = with pkgs; [
         caligula
         nvitop
-        planify
         gh
 
         gemini-cli
