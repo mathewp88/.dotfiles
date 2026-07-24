@@ -118,60 +118,63 @@ in
     "Mod+Ctrl+WheelScrollUp".cooldown-ms = 150;
 
     "XF86AudioPlay".action = spawn [
-      "playerctl"
+      "swayosd-client"
+      "--playerctl"
       "play-pause"
     ];
+
     "XF86AudioPrev".action = spawn [
-      "playerctl"
+      "swayosd-client"
+      "--playerctl"
       "previous"
     ];
+
     "XF86AudioPause".action = spawn [
-      "playerctl"
+      "swayosd-client"
+      "--playerctl"
       "play-pause"
     ];
+
     "XF86AudioNext".action = spawn [
-      "playerctl"
+      "swayosd-client"
+      "--playerctl"
       "next"
     ];
 
     "XF86AudioRaiseVolume".action = spawn [
-      "wpctl"
-      "set-volume"
-      "@DEFAULT_AUDIO_SINK@"
-      "5%+"
+      "swayosd-client"
+      "--output-volume"
+      "+5"
     ];
-    "XF86AudioRaiseVolume".allow-when-locked = true;
+
     "XF86AudioLowerVolume".action = spawn [
-      "wpctl"
-      "set-volume"
-      "@DEFAULT_AUDIO_SINK@"
-      "5%-"
+      "swayosd-client"
+      "--output-volume"
+      "-5"
     ];
-    "XF86AudioLowerVolume".allow-when-locked = true;
+
     "XF86AudioMute".action = spawn [
-      "wpctl"
-      "set-mute"
-      "@DEFAULT_AUDIO_SINK@"
-      "toggle"
+      "swayosd-client"
+      "--output-volume"
+      "mute-toggle"
     ];
-    "XF86AudioMute".allow-when-locked = true;
+
     "XF86AudioMicMute".action = spawn [
-      "wpctl"
-      "set-mute"
-      "@DEFAULT_AUDIO_SOURCE@"
-      "toggle"
+      "swayosd-client"
+      "--input-volume"
+      "mute-toggle"
     ];
-    "XF86AudioMicMute".allow-when-locked = true;
+
     "XF86MonBrightnessUp".action = spawn [
-      "brightnessctl"
-      "set"
-      "5%+"
+      "swayosd-client"
+      "--brightness"
+      "+5"
     ];
-    "XF86MonBrightnessUp".allow-when-locked = true;
+
     "XF86MonBrightnessDown".action = spawn [
-      "brightnessctl"
-      "set"
-      "5%-"
+      "swayosd-client"
+      "--brightness"
+      "-5"
     ];
 
     "Ctrl+Alt+Delete".action = quit;

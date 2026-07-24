@@ -475,7 +475,7 @@ respectExpireTimeout = false
 
 [osd]
 autoHideMs = 2000
-enabled = true
+enabled = false 
 enabledTypes = [ 0, 1, 2, 3 ]
 location = "bottom"
 monitors = []
